@@ -1,0 +1,394 @@
+body {
+    color: black;
+}
+.profile-heading {
+      background-color: #f2f2f2;
+    }
+    
+    .card {
+      position: relative;
+      margin-bottom: 27px;
+      background-color: #ffffff;
+      border-radius: 3px;
+    }
+    .card.card-transparent {
+      background: none;
+      border: 0;
+      margin: 0;
+      padding: 0;
+    }
+    .card.card-border {
+      border-style: solid;
+      border-width: 0;
+    }
+    .card.card-border.top {
+      border-top-width: 5px;
+    }
+    .card.card-border.right {
+      border-right-width: 5px;
+    }
+    .card.card-border.bottom {
+      border-bottom-width: 5px;
+    }
+    .card.card-border.left {
+      border-left-width: 5px;
+    }
+    .card.card-border > .card-heading {
+      background-color: #fafafa;
+      border-color: #e2e2e2;
+      border-top: 1px solid transparent;
+    }
+    .card.card-border > .card-heading > .card-title {
+      color: #999999;
+    }
+    .card.card-border.card-default {
+      border-color: #DDD;
+    }
+    .card.card-border.card-default > .card-heading {
+      border-top: 1px solid transparent;
+    }
+    .card-menu {
+      background-color: #fafafa;
+      padding: 12px;
+      border: 1px solid #e2e2e2;
+    }
+    .card-menu.dark {
+      background-color: #f8f8f8;
+    }
+    .card-body .card-menu {
+      border-left: 0;
+      border-right: 0;
+    }
+    .card-heading + .card-menu,
+    .card-menu + .card-body,
+    .card-body + .card-menu,
+    .card-body + .card-body {
+      border-top: 0;
+    }
+    .card-body {
+      position: relative;
+      padding: 15px;
+      border: 1px solid #e2e2e2;
+    }
+    .card-body + .card-footer {
+      border-top: 0;
+    }
+    .card-heading {
+      position: relative;
+      height: 52px;
+      line-height: 49px;
+      letter-spacing: 0.2px;
+      color: #999999;
+      font-size: 15px;
+      font-weight: 400;
+      padding: 0 8px;
+      background: #fafafa;
+      border: 1px solid #e2e2e2;
+      border-top-right-radius: 3px;
+      border-top-left-radius: 3px;
+    }
+    .card-heading + .card-body {
+      border-top: 0;
+    }
+    .card-heading > .dropdown .dropdown-toggle {
+      color: inherit;
+    }
+    .card-heading .widget-menu .btn-group {
+      margin-top: -3px;
+    }
+    .card-heading .widget-menu .form-control {
+      margin-top: 6px;
+      font-size: 11px;
+      height: 27px;
+      padding: 2px 10px;
+      border-radius: 1px;
+    }
+    .card-heading .widget-menu .form-control.input-sm {
+      margin-top: 9px;
+      height: 22px;
+    }
+    .card-heading .widget-menu .progress {
+      margin-top: 11px;
+      margin-bottom: 0;
+    }
+    .card-heading .widget-menu .progress-bar-lg {
+      margin-top: 10px;
+    }
+    .card-heading .widget-menu .progress-bar-sm {
+      margin-top: 15px;
+    }
+    .card-heading .widget-menu .progress-bar-xs {
+      margin-top: 17px;
+    }
+    .card-icon {
+      padding-left: 5px;
+    }
+    .card-title {
+      padding-left: 6px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .card-title > .fa,
+    .card-title > .glyphicon,
+    .card-title > .glyphicons,
+    .card-title > .imoon {
+      top: 2px;
+      min-width: 22px;
+      color: inherit;
+      font-size: 14px;
+    }
+    .card-title > a {
+      color: inherit;
+    }
+    .card-footer {
+      padding: 10px 15px;
+      background-color: #fafafa;
+      border: 1px solid #e2e2e2;
+      border-bottom-right-radius: 2px;
+      border-bottom-left-radius: 2px;
+    }
+    .card > .list-group {
+      margin-bottom: 0;
+    }
+    .card > .list-group .list-group-item {
+      border-radius: 0;
+    }
+    .card > .list-group:first-child .list-group-item:first-child {
+      border-top-right-radius: 2px;
+      border-top-left-radius: 2px;
+    }
+    .card > .list-group:last-child .list-group-item:last-child {
+      border-bottom-right-radius: 2px;
+      border-bottom-left-radius: 2px;
+    }
+    .card-heading + .list-group .list-group-item:first-child {
+      border-top-width: 0;
+    }
+    .card-body + .list-group .list-group-item:first-child {
+      border-top-width: 0;
+    }
+    .list-group + .card-footer {
+      border-top-width: 0;
+    }
+    .card > .table,
+    .card > .table-responsive > .table,
+    .card > .card-collapse > .table {
+      margin-bottom: 0;
+    }
+    .card > .table:first-child,
+    .card > .table-responsive:first-child > .table:first-child {
+      border-top-right-radius: 2px;
+      border-top-left-radius: 2px;
+    }
+    .card > .table:first-child > thead:first-child > tr:first-child td:first-child,
+    .card > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
+    .card > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+    .card > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+    .card > .table:first-child > thead:first-child > tr:first-child th:first-child,
+    .card > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
+    .card > .table:first-child > tbody:first-child > tr:first-child th:first-child,
+    .card > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
+      border-top-left-radius: 2px;
+    }
+    .card > .table:first-child > thead:first-child > tr:first-child td:last-child,
+    .card > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
+    .card > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+    .card > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+    .card > .table:first-child > thead:first-child > tr:first-child th:last-child,
+    .card > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
+    .card > .table:first-child > tbody:first-child > tr:first-child th:last-child,
+    .card > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
+      border-top-right-radius: 2px;
+    }
+    .card > .table:last-child,
+    .card > .table-responsive:last-child > .table:last-child {
+      border-bottom-right-radius: 2px;
+      border-bottom-left-radius: 2px;
+    }
+    .card > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+    .card > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+    .card > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+    .card > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+    .card > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+    .card > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+    .card > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
+    .card > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
+      border-bottom-left-radius: 2px;
+    }
+    .card > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+    .card > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+    .card > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+    .card > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+    .card > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+    .card > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+    .card > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
+    .card > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
+      border-bottom-right-radius: 2px;
+    }
+    .card > .card-body + .table,
+    .card > .card-body + .table-responsive {
+      border-top: 1px solid #eeeeee;
+    }
+    .card > .table > tbody:first-child > tr:first-child th,
+    .card > .table > tbody:first-child > tr:first-child td {
+      border-top: 0;
+    }
+    .card > .table-bordered,
+    .card > .table-responsive > .table-bordered {
+      border: 0;
+    }
+    .card > .table-bordered > thead > tr > th:first-child,
+    .card > .table-responsive > .table-bordered > thead > tr > th:first-child,
+    .card > .table-bordered > tbody > tr > th:first-child,
+    .card > .table-responsive > .table-bordered > tbody > tr > th:first-child,
+    .card > .table-bordered > tfoot > tr > th:first-child,
+    .card > .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+    .card > .table-bordered > thead > tr > td:first-child,
+    .card > .table-responsive > .table-bordered > thead > tr > td:first-child,
+    .card > .table-bordered > tbody > tr > td:first-child,
+    .card > .table-responsive > .table-bordered > tbody > tr > td:first-child,
+    .card > .table-bordered > tfoot > tr > td:first-child,
+    .card > .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+      border-left: 0;
+    }
+    .card > .table-bordered > thead > tr > th:last-child,
+    .card > .table-responsive > .table-bordered > thead > tr > th:last-child,
+    .card > .table-bordered > tbody > tr > th:last-child,
+    .card > .table-responsive > .table-bordered > tbody > tr > th:last-child,
+    .card > .table-bordered > tfoot > tr > th:last-child,
+    .card > .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+    .card > .table-bordered > thead > tr > td:last-child,
+    .card > .table-responsive > .table-bordered > thead > tr > td:last-child,
+    .card > .table-bordered > tbody > tr > td:last-child,
+    .card > .table-responsive > .table-bordered > tbody > tr > td:last-child,
+    .card > .table-bordered > tfoot > tr > td:last-child,
+    .card > .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+      border-right: 0;
+    }
+    .card > .table-bordered > thead > tr:first-child > td,
+    .card > .table-responsive > .table-bordered > thead > tr:first-child > td,
+    .card > .table-bordered > tbody > tr:first-child > td,
+    .card > .table-responsive > .table-bordered > tbody > tr:first-child > td,
+    .card > .table-bordered > thead > tr:first-child > th,
+    .card > .table-responsive > .table-bordered > thead > tr:first-child > th,
+    .card > .table-bordered > tbody > tr:first-child > th,
+    .card > .table-responsive > .table-bordered > tbody > tr:first-child > th {
+      border-bottom: 0;
+    }
+    .card > .table-bordered > tbody > tr:last-child > td,
+    .card > .table-responsive > .table-bordered > tbody > tr:last-child > td,
+    .card > .table-bordered > tfoot > tr:last-child > td,
+    .card > .table-responsive > .table-bordered > tfoot > tr:last-child > td,
+    .card > .table-bordered > tbody > tr:last-child > th,
+    .card > .table-responsive > .table-bordered > tbody > tr:last-child > th,
+    .card > .table-bordered > tfoot > tr:last-child > th,
+    .card > .table-responsive > .table-bordered > tfoot > tr:last-child > th {
+      border-bottom: 0;
+    }
+    .card > .table-responsive {
+      border: 0;
+      margin-bottom: 0;
+    }
+    .card-group {
+      margin-bottom: 19px;
+    }
+    .card-group .card-title {
+      padding-left: 0;
+    }
+    .card-group .card-heading,
+    .card-group .card-heading a {
+      position: relative;
+      display: block;
+      width: 100%;
+    }
+    .card-group.accordion-lg .card + .card {
+      margin-top: 12px;
+    }
+    .card-group.accordion-lg .card-heading {
+      font-size: 14px;
+      height: 54px;
+      line-height: 52px;
+    }
+    .card-group .accordion-icon {
+      padding-left: 35px;
+    }
+    .card-group .accordion-icon:after {
+      position: absolute;
+      content: "\f068";
+      font-family: "FontAwesome";
+      font-size: 12px;
+      font-style: normal;
+      font-weight: normal;
+      -webkit-font-smoothing: antialiased;
+      color: #555;
+      left: 10px;
+      top: 0;
+    }
+    .card-group .accordion-icon.collapsed:after {
+      content: "\f067";
+    }
+    .card-group .accordion-icon.icon-right {
+      padding-left: 10px;
+      padding-right: 30px;
+    }
+    .card-group .accordion-icon.icon-right:after {
+      left: auto;
+      right: 5px;
+    }
+    .card-group .card {
+      margin-bottom: 0;
+      border-radius: 3px;
+    }
+    .card-group .card + .card {
+      margin-top: 5px;
+    }
+    .card-group .card-heading + .card-collapse > .card-body {
+      border-top: 0;
+    }
+    .card-group .card-footer {
+      border-top: 0;
+    }
+    .card-group .card-footer + .card-collapse .card-body {
+      border-bottom: 1px solid #eeeeee;
+    }
+    
+    
+    .profile-img {
+      color: #999999;
+      font-weight: 600;
+      margin-top: 15px;
+    }
+    .profile-img:first-child {
+      margin-top: 0;
+    }
+    .profile-img-right,
+    .profile-img > .pull-right {
+      padding-left: 10px;
+    }
+    .profile-img-left,
+    .profile-img > .pull-left {
+      padding-right: 10px;
+    }
+    .profile-img-left,
+    .profile-img-right,
+    .profile-img-body {
+      display: table-cell;
+      vertical-align: top;
+    }
+    .profile-img-middle {
+      vertical-align: middle;
+    }
+    .profile-img-bottom {
+      vertical-align: bottom;
+    }
+    .profile-img-heading {
+      color: #555555;
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+    .profile-img-list {
+      padding-left: 0;
+      list-style: none;
+    }
+    
+    
