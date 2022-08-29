@@ -1,14 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/dist/css/styles.css">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Test</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/dist/css/styles.css" />
+    <title>Social Media app</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="/images/placeholder.com-logo1.png"
+            alt=""
+            width="150"
+            height="35"
+            class="d-inline-block align-text-top"
+          />
+        </a>
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+        </form>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/profile.html">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/login.html">Login</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main class="container mt-4 shadow-sm p-3 mb-5 bg-body rounded">
+      <div class="container">
+        <h1>New post</h1>
+      <div class="form-floating mb-2">
+        <textarea class="form-control bg-dim" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+        <label for="floatingTextarea2">What's your thoughts today?</label>
+        <button type="submit" class="btn btn-primary mt-2 mb-3">Send</button>
+      </div>
+      </div>
+      <div class="row mb-2 mt-4">
+        <div class="col-md-6">
+          <div
+            class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow p-2 h-md-250 position-relative"
+          >
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-primary">John-Smith</strong>
+              <h3 class="mb-0">Lorem ipsum</h3>
+              <div class="mb-1 text-muted">Aug 12</div>
+              <p class="card-text mb-auto">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam incidunt vel blanditiis quod nam, commodi repudiandae
+                aspernatur quo, soluta esse beatae necessitatibus error voluptas
+                libero dolor cumque fugit autem deserunt.
+              </p>
+              <div class="form-floating mt-4 mb-2">
+                <textarea class="form-control bg-dim" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                <label for="floatingTextarea2"></label>
+                <button type="submit" class="btn btn-primary mt-3">Reply</button>
+              </div>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img
+                src="https://xsgames.co/randomusers/avatar.php?g=male"
+                class="bd-placeholder-img"
+                width="150"
+                height="150"
+                role="img"
+                aria-label="Placeholder: Thumbnail"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div
+            class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow p-2 h-md-250 position-relative"
+          >
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success">Jenny Strongarm</strong>
+              <h3 class="mb-0">Lorem ipsum</h3>
+              <div class="mb-1 text-muted">Aug 10</div>
+              <p class="mb-auto">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+                id ab iusto laborum asperiores eaque necessitatibus magnam atque
+                at, nihil minus distinctio perspiciatis repellendus facilis vel
+                veniam omnis officiis minima.
+              </p>
+              <div class="form-floating mt-4 mb-2">
+                <textarea class="form-control bg-dim" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                <label for="floatingTextarea2"></label>
+                <button type="submit" class="btn btn-primary mt-3">Reply</button>
+              </div>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img
+                src="https://xsgames.co/randomusers/avatar.php?g=female"
+                class="bd-placeholder-img"
+                width="150"
+                height="150"
+                role="img"
+                aria-label="Placeholder: Thumbnail"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+            <div
+              class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow p-2 h-md-250 position-relative"
+            >
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-primary">Cathy Little</strong>
+                <h3 class="mb-0">Lorem ipsum</h3>
+                <div class="mb-1 text-muted">Aug 5</div>
+                <p class="card-text mb-auto">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam ratione nisi itaque dignissimos distinctio esse perspiciatis ducimus, officiis corporis et dolor minima? Architecto, expedita? Harum sequi consequuntur maxime ducimus impedit!
+                </p>
+                <div class="form-floating mt-4 mb-2">
+                  <textarea class="form-control bg-dim" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                  <label for="floatingTextarea2"></label>
+                  <button type="submit" class="btn btn-primary mt-3">Reply</button>
+                </div>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <img
+                src="https://xsgames.co/randomusers/avatar.php?g=female"
+                class="bd-placeholder-img border"
+                width="150"
+                height="150"
+                role="img"
+                aria-label="Placeholder: Thumbnail"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div
+              class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow p-2 h-md-250 position-relative"
+            >
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-primary">Arnold Tiny</strong>
+                <h3 class="mb-0">Lorem ipsum</h3>
+                <div class="mb-1 text-muted">Aug 1</div>
+                <p class="card-text mb-auto">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic asperiores rerum blanditiis quam vel sed maiores id quia molestias, dolor, sunt consequuntur voluptatem esse repudiandae mollitia eligendi enim reiciendis quidem?
+                </p>
+                <div class="form-floating mt-4 mb-2">
+                  <textarea class="form-control bg-dim" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                  <label for="floatingTextarea2"></label>
+                  <button type="submit" class="btn btn-primary mt-3">Reply</button>
+                </div>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <img
+                src="https://xsgames.co/randomusers/avatar.php?g=male"
+                class="bd-placeholder-img"
+                width="150"
+                height="150"
+                role="img"
+                aria-label="Placeholder: Thumbnail"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+              </div>
+            </div>
+          </div>
+      </div>
+    </main>
+    <footer class="footer mt-auto py-3 bg-light">
+      <div class="container">
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/profile.html">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/login.html">Login</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  </body>
 </html>
