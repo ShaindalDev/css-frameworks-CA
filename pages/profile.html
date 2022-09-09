@@ -22,8 +22,11 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/pages/profile.html">Profile</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" id="loginLink">
               <a class="nav-link" href="/pages/login.html">Login</a>
+            </li>
+            <li class="nav-item" id="logoutLink">
+              <button type="button" class="nav-link" id="logout">Logout</button>
             </li>
           </ul>
         </div>
@@ -419,6 +422,10 @@
       <!--Footer end-->
       <!--Loaded scripts goes here-->
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/src/js/index.js"></script>
+    <script src="/src/js/auth/check.js"></script>
+    <script src="/src/js/auth/logout.js"></script>
+    <!-- <script src="/src/js/auth.js"></script> -->
     <script>feather.replace()</script>
     <!--End of loaded scripts-->
 </body>

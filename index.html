@@ -31,8 +31,11 @@
           <li class="nav-item">
             <a class="nav-link" href="/pages/profile.html">Profile</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" id="loginLink">
             <a class="nav-link" href="/pages/login.html">Login</a>
+          </li>
+          <li class="nav-item" id="logoutLink">
+            <button type="button" class="nav-link" id="logout">Logout</button>
           </li>
         </ul>
       </div>
@@ -197,8 +200,7 @@
       </div>
     </footer>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- <script src="/src/js/index.js" type="module"></script>
-    <script src="/src/js/posts/fetch.js"></script> -->
-    <script src="/src/js/auth/login.js"></script>
+    <script src="./src/js/auth/check.js"></script>
+    <script src="src/js/auth/logout.js"></script>
   </body>
 </html>
