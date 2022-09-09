@@ -20,6 +20,7 @@ loginButton.addEventListener("click", (e) => {
       .then((data) => {
         console.log(data);
         window.localStorage.setItem("_token", data.accessToken);
+        location.href = "/pages/profile.html"
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -28,3 +29,10 @@ loginButton.addEventListener("click", (e) => {
     console.log(error);
   }
 });
+
+if (localStorage.getItem("_token")) {
+  location.href = "/pages/profile.html"
+};
+
+let link = document.getElementById("logoutLink")
+    link.style.display="none";
