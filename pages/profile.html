@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/0dc149767b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/dist/css/styles.css">
-    <title>Social Media app</title>
+    <title>Social Verse | Profile</title>
 </head>
 <body>
   <!--Top nav start-->
@@ -35,21 +35,23 @@
       <!--Main content start-->
       <main class="container my-3 bg-body rounded">
         <!--profile nav with profile picture-->
+        <div id="profileWrapper">
     <div class="profile-heading mt-4 mb-4 p-2 bg-lighter rounded border border-light">
             <div class="h-50px" style="background-image:url(#); background-position: center; background-size: cover; background-repeat: no-repeat"></div>
             <div class="card-body pt-0 border-0">
               <div class="text-center">
                 <div class="text-center">
                   <!-- profile image -->
-                  <div class="profile-img clearfix profile-img-lg profile-img-center mt-n5 mb-3">
+                  <button class="btn btn-primary" type="button">Edit Profile</button>
+                  <div class="profile-img clearfix profile-img-lg profile-img-center mt-n5 mb-3" id="profileImg">
                     <a href="#"><img class="profile-img rounded border border-white border-3" src="https://xsgames.co/randomusers/avatar.php?g=male" alt="Image of the profile owner"></a>
                   </div>
                   <!-- Profile info -->
-                  <h5 class="mb-0"> <a href="#">Robin Johnsen </a> </h5>
+                  <h5 class="mb-0" id="profileName"> <a href="#">Robin Johnsen </a> </h5>
                   <small>Web Developer at Developer Nation</small>
-                  <p class="mt-3">The Matrix is one hell of a source code, i like the challenge of working it</p>
+                  <p class="mt-3" id="profileInfo">The Matrix is one hell of a source code, i like the challenge of working it</p>
                   <!-- Followers, post and following stats -->
-                  <div class="hstack gap-2 gap-xl-3 justify-content-center">
+                  <div class="hstack gap-2 gap-xl-3 justify-content-center" id="profileCount">
                     <div>
                       <h6 class="mb-0">456</h6>
                       <small>Post</small>
@@ -104,11 +106,12 @@
               </div>
             </div>
     </div>
+  </div>
 <!--End of profile nav-->
 <!--content bellow profile header start-->
     <div class="row mx-2">
         <div class="col-md-">
-          <div class="card">
+          <div class="card template">
             <div class="card-heading bg-lighter">
               <span class="card-icon">
               </span>
@@ -123,9 +126,9 @@
             </div>
           </div>
           <!--feed posts start-->
-          <div class="row g-4">
+          <div class="row g-4" id="usersPostWrapper">
             <!-- Card 1 START -->
-          <div class="card border-0">
+          <!-- <div class="card border-0 templates">
             <div class="card-header border-0 pb-0 bg-lighter">
               <div class="d-flex align-items-center justify-content-between">
                 <div class="d-flex align-items-center">
@@ -257,10 +260,10 @@
                 </li>
               </ul>
             </div>
-          </div>
+          </div> -->
           <!--Card 1 END-->
           <!-- Card 2 START -->
-          <div class="card border-0">
+          <!-- <div class="card border-0">
             <div class="card-header border-0 pb-0 bg-lighter">
               <div class="d-flex align-items-center justify-content-between">
                 <div class="d-flex align-items-center">
@@ -394,7 +397,7 @@
                 </li>
               </ul>
             </div>
-          </div>
+          </div> -->
           <!--Card 2 END-->
         </div>
           </div>
@@ -422,10 +425,14 @@
       <!--Footer end-->
       <!--Loaded scripts goes here-->
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/src/js/index.js"></script>
+    <!-- <script src="/src/js/index.mjs"></script> -->
     <script src="/src/js/auth/check.js"></script>
     <script src="/src/js/auth/logout.js"></script>
-    <!-- <script src="/src/js/auth.js"></script> -->
+    <script src="/src/js/profile/userprofile.js"></script>
+    <script src="/src/js/profile/userposts.mjs" type="module"></script>
+    <!-- <script src="/src/js/profile/updateprofile.js"></script> -->
+    <!-- <script src="/src/js/posts/posts.js"></script> -->
+     
     <!--End of loaded scripts-->
 </body>
 </html>
