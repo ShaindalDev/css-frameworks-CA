@@ -1,7 +1,13 @@
+/**
+ * Login function with consts for login form and eventListener for the login button. 
+ */
 const baseUrl = "https://nf-api.onrender.com/api/v1/social";
 const loginForm = document.getElementById("login-form");
 const loginButton = document.getElementById("login-form-submit");
-
+/**
+ * EventListener for when the login button is clicked, sets auth token and email address for use when viewing your own posts on profile page.
+ * When credentials are valid redirects you to profile page. 
+ */
 loginButton.addEventListener("click", (e) => {
   const email = loginForm.email.value;
   const password = loginForm.password.value;
@@ -20,6 +26,7 @@ loginButton.addEventListener("click", (e) => {
       .then((data) => {
         console.log(data);
         window.localStorage.setItem("_token", data.accessToken);
+        window.localStorage.setItem("_email", data.email);
         location.href = "/pages/profile.html"
       })
       .catch((error) => {
