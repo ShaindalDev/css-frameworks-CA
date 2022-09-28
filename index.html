@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/0dc149767b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/dist/css/styles.css" />
-    <title>Social Media app</title>
+    <title>Social Verse | Home</title>
   </head>
   <body>
     <nav class="navbar navbar-light bg-light">
@@ -41,18 +41,93 @@
         </ul>
       </div>
     </nav>
+    <div class="profile-heading mt-4 mb-4 p-2 bg-lighter rounded border border-light">
+      <div class="h-50px" style="background-image:url(#); background-position: center; background-size: cover; background-repeat: no-repeat"></div>
+      <div class="card-body pt-0 border-0">
+        <div class="text-center">
+          <div class="text-center">
+            <!-- profile image -->
+            <div class="profile-img clearfix profile-img-lg profile-img-center mt-n5 mb-3">
+              <a href="#"><img class="profile-img rounded border border-white border-3" src="https://xsgames.co/randomusers/avatar.php?g=male" alt="Image of the profile owner"></a>
+            </div>
+            <!-- Profile info -->
+            <h5 class="mb-0"> <a href="#">Robin Johnsen </a> </h5>
+            <small>Web Developer at Developer Nation</small>
+            <p class="mt-3">The Matrix is one hell of a source code, i like the challenge of working it</p>
+            <!-- Followers, post and following stats -->
+            <div class="hstack gap-2 gap-xl-3 justify-content-center">
+              <div>
+                <h6 class="mb-0">456</h6>
+                <small>Post</small>
+              </div>
+              <div class="vr"></div>
+              <div>
+                <h6 class="mb-0">32.5K</h6>
+                <small>Followers</small>
+              </div>
+              <div class="vr"></div>
+              <div>
+                <h6 class="mb-0">365</h6>
+                <small>Following</small>
+              </div>
+            </div>
+            <!-- Follower, post and following - end -->
+          </div>
+          <hr>
+          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Friends</button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+              <h5 id="offcanvasRightLabel">Friends List</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <div class="post post-story ">
+                <a href="#"> <img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=male" alt=""> </a>
+              </div>
+              <div class="nav justify-content-center align-items-center">
+                <h6 class="nav-item card-title mb-3"> <a href="#"> Albus Doredumble</a></h6>
+              </div>
+              <div class="post post-story ">
+                <a href="#"> <img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=male" alt=""> </a>
+              </div>
+              <div class="nav justify-content-center align-items-center">
+                <h6 class="nav-item card-title mb-3"> <a href="#"> The mighty Thor</a></h6>
+              </div>
+              <div class="post post-story ">
+                <a href="#"> <img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=male" alt=""> </a>
+              </div>
+              <div class="nav justify-content-center align-items-center">
+                <h6 class="nav-item card-title mb-3"> <a href="#"> Loki Odinsson</a></h6>
+              </div>
+              <div class="post post-story ">
+                <a href="#"> <img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=female" alt=""> </a>
+              </div>
+              <div class="nav justify-content-center align-items-center">
+                <h6 class="nav-item card-title mb-3"> <a href="#"> Wanda Sakarov</a></h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
     <main class="container mt-4 shadow-sm p-3 mb-5 bg-body rounded">
-      <div class="container">
+      <div class="container" id="createPost">
         <h1>New post</h1>
+        <form id="postForm">
+        <div class="mb-3">
+          <label for="postTitle" class="col-form-label" aria-required="true"></label>
+          <input type="text" class="form-control bg-dim text-dtext" id="postTitle" name="postTitle" placeholder="Title for your post" />
+        </div>
       <div class="form-floating mb-2">
-        <textarea class="form-control bg-dim" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-        <label for="floatingTextarea2">What's your thoughts today?</label>
-        <button type="submit" class="btn btn-primary mt-2 mb-3">Send</button>
+        <textarea class="form-control bg-dim text-dtext" placeholder="What's your thoughts today" id="postContent" style="height: 100px"></textarea>
+        <label for="postContent">What's your thoughts today?</label>
+        <button type="submit" class="btn btn-primary mt-2 mb-3" id="postButton-submit">Post</button>
       </div>
+        </form>
       </div>
-      <div class="row mb-2 mt-4">
+      <div class="postWrapper row mb-2 mt-4">
         <div class="postContainer col-md-6">
-          <div
+          <!-- <div
             class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow p-2 h-md-250 position-relative"
           >
             <div class="col p-4 d-flex flex-column position-static">
@@ -83,9 +158,9 @@
                 focusable="false"
               >
             </div>
-          </div>
+          </div> -->
         </div>
-        <div class="postContainer col-md-6">
+        <!-- <div class="postContainer col-md-6">
           <div
             class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow p-2 h-md-250 position-relative"
           >
@@ -180,7 +255,7 @@
               >
               </div>
             </div>
-          </div>
+          </div> -->
       </div>
     </main>
     <footer class="footer mt-auto py-3 bg-light">
@@ -203,5 +278,7 @@
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./src/js/auth/check.js"></script>
     <script src="src/js/auth/logout.js"></script>
+    <script src="src/js/index.mjs" type="module"></script>
+    <script src="src/js/posts/createPost.js"></script>
   </body>
 </html>
