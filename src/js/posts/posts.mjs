@@ -12,7 +12,7 @@ export async function getAllPosts() {
     },
   };
   const response = await fetch(
-    `${API_SOCIAL_URL}/posts?sort=owner&sortOrder=desc&_author=true&_reactions=true&_comments=true&limit=200&offset=1`,
+    `${API_SOCIAL_URL}/posts?sort=owner&sortOrder=desc&_author=true&_reactions=true&_comments=true&limit=100&offset=1`,
     authOptions
   );
   const data = await response.json();
@@ -39,7 +39,7 @@ export async function getAllPosts() {
          </a>
          <ul class="dropdown-menu dropdown-menu-end">
          
-           <li><i class="fa-solid fa-pen"></i><a class="dropdown-item text-dtext" href="#">Update Post</a></li>
+           <li><i class="fa-solid fa-pen"></i><a class="dropdown-item text-dtext underline-hover" data-bs-toggle="offcanvas" href="#offcanvasPost" role="button" aria-controls="offcanvas">Update Post</a></li>
            <i class="fa-solid fa-trash-can">
            <li><a class="underlineHover dropdown-item text-dtext" id="deletePost" href="#">Delete Post  </a></li></i>
            

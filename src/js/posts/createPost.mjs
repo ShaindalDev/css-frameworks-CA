@@ -30,7 +30,7 @@ createPost.addEventListener("submit", (event) => {
       .then((data) => {
         console.log(data);
         // localStorage.setItem("_token", data.accessToken);
-        // location.href = "/pages/index.html";
+        location.href = "/pages/index.html";
       })
       .catch((error) => {
         console.error("Error:", error);

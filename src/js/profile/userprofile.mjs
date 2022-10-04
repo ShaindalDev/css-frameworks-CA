@@ -14,7 +14,7 @@ async function makeProfile() {
       Authorization: `Bearer ${token}`,
     },
   };
-  const response = await fetch(`${mainURL}/social/profiles/Shaindal`, authOptions);
+  const response = await fetch(`${mainURL}/social/profiles/Shaindal2`, authOptions);
   const data = await response.json();
   console.log(data);
   profileWrapper.innerHTML = "";
@@ -25,7 +25,7 @@ async function makeProfile() {
             <div class="text-center">
               <!-- profile image -->
               <div class="profile-img clearfix profile-img-lg profile-img-center mt-n5 mb-3" id="profileImg">
-                <a href="#"><img class="profile-img rounded border border-white border-3" src="${data.avatar}" alt="Image of the profile owner"></a>
+                <a href="#"><img class="profile-img rounded border border-white border-3 mw-100" src="${data.avatar}" alt="Image of the profile owner"></a>
               </div>
               <!-- Profile info -->
               <h5 class="mb-0" id="profileName"> <a href="#">${data.name} </a> </h5>
