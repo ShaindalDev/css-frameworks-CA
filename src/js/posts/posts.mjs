@@ -1,36 +1,37 @@
-
-/**
- * This will fetch all posts from the Noroff social API
- * 
- */
-export const mainURL = "https://nf-api.onrender.com/api/v1";
-export const postsURL = "/social/posts/";
+import { API_SOCIAL_URL } from "../api/constants.mjs";
 export const token = localStorage.getItem("_token");
 
 export const postContainer = document.querySelector(".postWrapper");
+export const deletePostButton = document.getElementById("deletePost");
 
 export async function getAllPosts() {
   const authOptions = {
     headers: {
-      "Content-type": "application/json",
+      "Content-type": `application/json; charset=UTF-8`,
       Authorization: `Bearer ${token}`,
     },
   };
-  const response = await fetch(`${mainURL}/social/posts?sort=created&sortOrder=desc&_author=true&_reactions=true&_comments=true`, authOptions);
+  const response = await fetch(
+    `${API_SOCIAL_URL}/posts?sort=owner&sortOrder=desc&_author=true&_reactions=true&_comments=true&limit=200&offset=1`,
+    authOptions
+  );
   const data = await response.json();
   console.log(data);
   postContainer.innerHTML = "";
-  data.forEach(function (data, index) {
+  data.forEach(function (data) {
     postContainer.innerHTML += `<div class="postContainer col-md-6"><div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow p-2 h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
           <strong class="d-inline-block mb-2 text-primary">${data.author.name}</strong>
           <h3 class="mb-0">${data.title}</h3>
-          <div class="mb-1 text-muted">Created:${data.created}</div>
+          <div class="mb-1 text-dark">Created:${data.created}</div>
           <p class="card-text mb-auto">${data.body}</p>
-          
+          <div class="media">
+          <img class="mb-3" src="${data.media}">
+          </div>
+          <div class="mb-1 text-dark">Tags: ${data.tags}</div>
         </div>
         <div class="col-auto d-none d-lg-block">
-          <img src="${data.media}" class="bd-placeholder-img" width="150" height="150" role="img" aria-label="Placeholder: Thumbnail" preserveaspectratio="xMidYMid slice" focusable="false">
+          <img src="${data.author.avatar}" class="bd-placeholder-img" width="150" height="150" role="img" aria-label="Placeholder: Thumbnail" preserveaspectratio="xMidYMid slice" focusable="false">
         </div>
         <div class="dropdown">
         <button class="btn btn-dark dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button> <i class="bi bi-chevron-down"></i>
@@ -40,7 +41,7 @@ export async function getAllPosts() {
          
            <li><i class="fa-solid fa-pen"></i><a class="dropdown-item text-dtext" href="#">Update Post</a></li>
            <i class="fa-solid fa-trash-can">
-           <li><a class="underlineHover dropdown-item text-dtext" id="deletePost" href="#">Delete Post </a></li></i>
+           <li><a class="underlineHover dropdown-item text-dtext" id="deletePost" href="#">Delete Post  </a></li></i>
            
          </ul>
        </div>
@@ -88,7 +89,7 @@ export async function getAllPosts() {
                       </ul>
                     </div>
                   </div>
-                  <ul class="comment-item-nested list-unstyled">
+                  <ul class="comment-item list-unstyled">
                     <li class="comment-item">
                       <div class="d-flex">
                         <div class="post post-xs">
@@ -159,7 +160,22 @@ export async function getAllPosts() {
   console.log(postContainer);
 }
 
-getAllPosts();
+
+// deletePostButton.addEventListener("click", (e) => {
+//   deletePost
+// })
+// export function deletePost() {
+//   const deletePosts = {
+//       method: 'DELETE',
+//       headers: {
+//         Authorization: `Bearer ${token}`,
+//       }
+//     };
+    
+//      fetch(`${mainURL}/social/posts/`, deletePosts)
+//       .then((response) => response.json())
+//       .then((json) => console.log(json));
+//   }
 
 //get post by ID
 
