@@ -26,7 +26,7 @@ export async function getAllPosts() {
           <div class="mb-1 text-dark">Created:${data.created}</div>
           <p class="card-text mb-auto">${data.body}</p>
           <div class="media">
-          <img class="mb-3" src="${data.media}">
+          <img class="mb-3 mw-100" role="img" src="${data.media}">
           </div>
           <div class="mb-1 text-dark">Tags: ${data.tags}</div>
         </div>
@@ -66,15 +66,15 @@ export async function getAllPosts() {
                 <li class="comment-item">
                   <div class="d-flex position-relative">
                     <div class="post post-xs">
-                      <a href="#"><img class="post-img rounded-circle" src="${data.owner}" alt=""></a>
+                      <a href="#"><img class="post-img rounded-circle" src="#" alt=""></a>
                     </div>
                     <div class="ms-2">
                       <div class="bg-dark p-3 rounded">
                         <div class="d-flex justify-content-between">
-                          <h6 class="mb-1"> <a href="#"> Alice wonderland </a></h6>
+                          <h6 class="mb-1"> <a href="#"> </a></h6>
                           <small class="ms-2">10hr</small>
                         </div>
-                        <p class="small mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas aliquam architecto nulla iusto laudantium!</p>
+                        <p class="small mb-0"></p>
                       </div>
                       <ul class="nav py-2 small">
                         <li class="nav-item">
@@ -89,56 +89,6 @@ export async function getAllPosts() {
                       </ul>
                     </div>
                   </div>
-                  <ul class="comment-item list-unstyled">
-                    <li class="comment-item">
-                      <div class="d-flex">
-                        <div class="post post-xs">
-                          <a href="#"><img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=female" alt=""></a>
-                        </div>
-                        <div class="ms-2">
-                          <div class="bg-dark p-3 rounded">
-                            <div class="d-flex justify-content-between">
-                              <h6 class="mb-1"> <a href="#"> Natasha Romanov </a> </h6>
-                              <small class="ms-2">5hr</small>
-                            </div>
-                            <p class="small mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, corrupti?</p>
-                          </div>
-                          <ul class="nav py-2 small">
-                            <li class="nav-item">
-                              <a class="nav-link" href="#"> Like (3)</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="#"> Reply</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="comment-item">
-                      <div class="d-flex">
-                        <div class="post post-story post-xs">
-                          <a href="#"><img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=male" alt=""></a>
-                        </div>
-                        <div class="ms-2">
-                          <div class="bg-dark p-3 rounded">
-                            <div class="d-flex justify-content-between">
-                              <h6 class="mb-1"> <a href="#"> Loki Odinsson </a> </h6>
-                              <small class="ms-2">25min</small>
-                            </div>
-                            <p class="small mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, eos.</p>
-                          </div>
-                          <ul class="nav  py-2 small">
-                            <li class="nav-item">
-                              <a class="nav-link" href="#"> Like (39)</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="#"> Reply</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
                   <a href="#" role="button" class="btn btn-link btn-link-loader btn-sm text-secondary d-flex align-items-center mb-3 ms-5" data-bs-toggle="button" aria-pressed="true">
                     <div class="dotsdots me-2">
                       <span class="dotDot"></span>
