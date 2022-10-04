@@ -29,7 +29,7 @@ export async function getUsersPosts() {
     // console.log(data);
 //Filter the data received from API
 /**
- * Filter function, to filter all the data that comes from the API, down to a singel users data.
+ * Filter function, to filter all the data that comes from the API, down to a single users data.
  */
       const filteredData = data.filter((filtered) => {
         return filtered.author.email == localEmail;
@@ -70,10 +70,10 @@ export async function getUsersPosts() {
           <img class="card-img" src="${filteredData.media}" alt="Post">
           <ul class="nav nav-stack py-3 small">
             <li class="nav-item">
-              <a class="nav-link active" href="#">Liked (789)</a>
+              <a class="nav-link active" href="#">Liked ${filteredData._count.reactions}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Comments (45)</a>
+              <a class="nav-link" href="#">Comments ${filteredData._count.comments}</a>
             </li>
           </ul>
           <div class="d-flex mb-3">
@@ -93,10 +93,10 @@ export async function getUsersPosts() {
                 <div class="ms-2">
                   <div class="bg-dark p-3 rounded">
                     <div class="d-flex justify-content-between">
-                      <h6 class="mb-1"> <a href="#"> Alice wonderland </a></h6>
+                      <h6 class="mb-1"> <a href="#">${filteredData.comments.owner} </a></h6>
                       <small class="ms-2">10hr</small>
                     </div>
-                    <p class="small mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas aliquam architecto nulla iusto laudantium!</p>
+                    <p class="small mb-0">${filteredData.comments.body}</p>
                   </div>
                   <ul class="nav py-2 small">
                     <li class="nav-item">
@@ -111,7 +111,7 @@ export async function getUsersPosts() {
                   </ul>
                 </div>
               </div>
-              <ul class="comment-item-nested list-unstyled">
+              <ul class="comment-item list-unstyled">
                 <li class="comment-item">
                   <div class="d-flex">
                     <div class="post post-xs">
