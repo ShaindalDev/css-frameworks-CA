@@ -86,14 +86,27 @@
                     <input type="password" class="form-control" id="userPassword" name="userPassword" />
                   </div>
                 </div>
+                <div class="col">
+                  <div class="mb-3">
+                    <label for="banner" class="col-form-label" aria-required="true">Banner:</label>
+                    <input type="url" class="form-control" id="banner" name="banner" />
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="mb-3">
+                    <label for="avatar" class="col-form-label" aria-required="true">Avatar:</label>
+                    <input type="url" class="form-control" id="avatar" name="avatar" />
+                  </div>
+                </div>
               </div>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                Close
+              </button>
+              <button class="btn btn-primary" id="register-form-submit">Register</button>
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-              Close
-            </button>
-            <button type="button" class="btn btn-primary" id="register-form-submit">Register</button>
+            
           </div>
         </div>
       </div>
@@ -115,8 +128,9 @@
     </div>
   </footer>
   <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="/src/js/index.mjs" type="module"></script> -->
   <script src="/src/js/auth/login.js"></script>
-  <script src="/src/js/auth/register.js"></script>
+  <script src="/src/js/auth/register.js" type="module"></script>
 </body>
 
 </html>
