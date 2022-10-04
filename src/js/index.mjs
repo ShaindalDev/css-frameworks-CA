@@ -1,3 +1,4 @@
-// import * as posts from "./posts/index.js"
+import * as posts from "./posts/index.mjs";
 
-import * as fetchPosts from "./posts/index.mjs"
+posts.getAllPosts();
+
