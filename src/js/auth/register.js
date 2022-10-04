@@ -1,37 +1,24 @@
-// Manuel registration of a profile 
-// fetch('https://nf-api.onrender.com/api/v1/social/auth/register', {
-// method: 'POST',
-// body: JSON.stringify({
-//     name: "Shaindal",
-//     email: "RobJoh57981@stud.noroff.no",
-//     password: "Ina130509"
+import { API_SOCIAL_URL } from "../api/constants.mjs";
 
-// }),
-// headers: {
-//     'Content-type': 'application/json; charset=UTF-8',
-// },
-// })
-// .then((response) => response.json())
-// .then((json) => console.log(json));
+const registerForm = document.getElementById("registerForm");
 
-//     localStorage.setItem('token', acessToken);
-
-const v1baseUrl = "https://nf-api.onrender.com/api/v1";
-const registerURL = "/social/auth/register"
-const registerForm = document.querySelector("#registerForm");
-const registerButton = document.getElementById("register-form-submit");
-
-registerButton.addEventListener("click", (e) => {
+registerForm.addEventListener("submit", (event) => {
+  console.log('test')
+  event.preventDefault();
   const userName = registerForm.userName.value;
   const email = registerForm.userEmail.value;
   const password = registerForm.userPassword.value;
+  const banner = registerForm.banner.value;
+  const avatar = registerForm.avatar.value
   try {
-    fetch(`${v1baseUrl}/social/auth/register`, {
+    fetch(`${API_SOCIAL_URL}/auth/register`, {
       method: "POST",
       body: JSON.stringify({
         name: userName,
         email: email,
         password: password,
+        banner: banner,
+        avatar: avatar
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
@@ -50,3 +37,31 @@ registerButton.addEventListener("click", (e) => {
     console.log(error);
   }
 });
+
+
+
+// const v1baseUrl = "https://nf-api.onrender.com/api/v1";
+// const registerURL = "/social/auth/register"
+
+
+
+
+
+
+// *****Manuel registration of a profile ******
+// fetch('https://nf-api.onrender.com/api/v1/social/auth/register', {
+// method: 'POST',
+// body: JSON.stringify({
+//     name: "Shaindal",
+//     email: "RobJoh57981@stud.noroff.no",
+//     password: "Ina130509"
+
+// }),
+// headers: {
+//     'Content-type': 'application/json; charset=UTF-8',
+// },
+// })
+// .then((response) => response.json())
+// .then((json) => console.log(json));
+
+//     localStorage.setItem('token', accessToken);
