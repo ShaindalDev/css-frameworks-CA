@@ -1,15 +1,41 @@
-// Functionality for updating users post will come here
-fetch('https://nf-api.onrender.com/api/v1/social/profiles/Shaindal/media', {
-method: 'PUT',
-body: JSON.stringify({
-    banner: "The Matrix is one hell of a source code, i like the challenge of working with it",
-    avatar: "https://xsgames.co/randomusers/avatar.php?g=male",
+import { getProfile, updateProfile } from "../api/profile/index.mjs";
+import { load } from "../storage/storage.mjs";
 
-}),
-headers: {
-    'Content-type': 'application/json; charset=UTF-8',
-    Authorization: `Bearer ${token}`,
-},
-})
-.then((response) => response.json())
-.then((json) => console.log(json));
+export async function setUpdateProfileListener() {
+  const form = document.querySelector("#updateProfileForm");
+
+ 
+
+  if (form) {
+    const { name, email } = load("profile")
+    form.name.value = name;
+    form.email.value = email;
+
+    const button = form.querySelector("button");
+    button.disabled = true;
+
+    const profile = await getProfile(name);
+
+    
+    form.banner.value = profile.banner;
+    form.avatar.value = profile.avatar
+
+    button.disabled = false;
+    
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const form = event.target;
+      const formData = new FormData(form);
+      const profile = Object.fromEntries(formData.entries())
+      
+      profile.name = name;
+      profile.email = email;
+      console.log('success');
+        
+      //calling the function to send to API
+      updateProfile(profile)
+    });
+  }
+
+
+}
