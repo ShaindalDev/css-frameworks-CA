@@ -14,7 +14,7 @@ async function makeProfile() {
       Authorization: `Bearer ${token}`,
     },
   };
-  const response = await fetch(`${mainURL}/social/profiles/Shaindal2`, authOptions);
+  const response = await fetch(`${mainURL}/social/profiles/Shaindal3`, authOptions);
   const data = await response.json();
   console.log(data);
   profileWrapper.innerHTML = "";

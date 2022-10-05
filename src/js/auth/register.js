@@ -27,7 +27,7 @@ registerForm.addEventListener("submit", (event) => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        window.localStorage.setItem("_token", data.accessToken);
+        // window.localStorage.setItem("_token", data.accessToken);
         location.href = "/pages/profile.html";
       })
       .catch((error) => {
