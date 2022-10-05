@@ -1,9 +1,12 @@
 //importing from other JS files
+import { API_SOCIAL_URL } from "../api/constants.mjs";
+import { setUpdatePostListener } from "../handlers/updatepost.mjs";
+import { deletePost } from "../posts/deletePost.mjs";
 // import { formatTimeChange } from "../components/formatTime.mjs";
 
 // global const used in the file
-const mainURL = "https://nf-api.onrender.com/api/v1";
-const postsURL = "/social/posts/";
+
+const postsURL = "/posts";
 const token = localStorage.getItem("_token");
 const localEmail = localStorage.getItem("_email");
 const postContainer = document.getElementById("usersPostWrapper");
@@ -15,7 +18,7 @@ const postContainer = document.getElementById("usersPostWrapper");
  */
 export async function getUsersPosts() {
     const response = await fetch(
-      `${mainURL}${postsURL}?_author=true&_comments=true&_reactions=true`,
+      `${API_SOCIAL_URL}${postsURL}?_author=true&_comments=true&_reactions=true&limit=700&offset=1`,
       {
         method: "get",
         headers: {
@@ -59,8 +62,8 @@ export async function getUsersPosts() {
               <a href="#" class="text-dtext btn btn-secondary-soft-hover py-1 px-2"  data-bs-toggle="dropdown">
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item text-dtext" href="#">Save post</a></li>
-                <li><a class="dropdown-item text-dtext" href="#">Unfollow Albus Doredumble </a></li>
+                <li><a class="dropdown-item text-dtext" href="#">Delete Post</a></li>
+                <li><a class="dropdown-item text-dtext" href="#">Update Post </a></li>
               </ul>
             </div>
           </div>

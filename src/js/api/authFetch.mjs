@@ -1,7 +1,7 @@
-import { load } from "../storage/storage.mjs";
+
 
 export function headers() {
-    const token = load("_token");
+    const token = localStorage.getItem("_token");
 
     return {
         "Content-Type": "application/json",

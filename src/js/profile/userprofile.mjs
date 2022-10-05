@@ -1,20 +1,26 @@
-const mainURL = "https://nf-api.onrender.com/api/v1";
+import { API_SOCIAL_URL } from "../api/constants.mjs";
+import { authFetch } from "../api/authFetch.mjs";
+import { profile } from "../api/constants.mjs";
 const profileImg = document.getElementById("profileImg");
 const profilename = document.getElementById("profileName");
 const profileInfo = document.getElementById("profileInfo");
 const profileCount = document.getElementById("profileCount");
 const profileFriends = document.getElementById("offcanvasRight");
-const token = localStorage.getItem("_token");
+// const token = localStorage.getItem("_token");
+// const profile = localStorage.getItem("profile");
+
+const action = "/profiles";
 
 const profileWrapper = document.getElementById("profileWrapper");
 async function makeProfile() {
-  const authOptions = {
-    headers: {
-      "Content-type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-  };
-  const response = await fetch(`${mainURL}/social/profiles/Shaindal3`, authOptions);
+  // const authOptions = {
+  //   headers: {
+  //     "Content-type": "application/json",
+  //     Authorization: `Bearer ${token}`,
+  //   },
+  // };
+  const getProfileURL = `${API_SOCIAL_URL}${action}/${profile}`;
+  const response = await authFetch(getProfileURL);
   const data = await response.json();
   console.log(data);
   profileWrapper.innerHTML = "";
@@ -24,7 +30,7 @@ async function makeProfile() {
           <div class="text-center">
             <div class="text-center">
               <!-- profile image -->
-              <div class="profile-img clearfix profile-img-lg profile-img-center mt-n5 mb-3" id="profileImg">
+              <div class="profile-img clearfix profile-img-lg profile-img-center mt-n5 mb-3" id="${profileImg}">
                 <a href="#"><img class="profile-img rounded border border-white border-3 mw-100" src="${data.avatar}" alt="Image of the profile owner"></a>
               </div>
               <!-- Profile info -->
@@ -32,7 +38,7 @@ async function makeProfile() {
               <small>Web Developer at Developer Nation</small>
               <p class="mt-3" id="profileInfo">The Matrix is one hell of a source code, i like the challenge of working it</p>
               <!-- Followers, post and following stats -->
-              <div class="hstack gap-2 gap-xl-3 justify-content-center" id="profileCount">
+              <div class="hstack gap-2 gap-xl-3 justify-content-center" id="${profileCount}">
                 <div>
                   <h6 class="mb-0">${data._count.posts}</h6>
                   <small>Post</small>

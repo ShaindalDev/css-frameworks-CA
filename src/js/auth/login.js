@@ -25,9 +25,9 @@ loginForm.addEventListener("submit", (event) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         window.localStorage.setItem("_token", data.accessToken);
         window.localStorage.setItem("_email", data.email);
+        window.localStorage.setItem("profile", data.name);
         location.href = "/pages/profile.html"
       })
       .catch((error) => {

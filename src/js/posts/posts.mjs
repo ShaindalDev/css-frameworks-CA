@@ -2,7 +2,7 @@ import { API_SOCIAL_URL } from "../api/constants.mjs";
 export const token = localStorage.getItem("_token");
 
 export const postContainer = document.querySelector(".postWrapper");
-export const deletePostButton = document.getElementById("deletePost");
+// export const deletePostButton = document.getElementById("deletePost");
 
 export async function getAllPosts() {
   const authOptions = {
@@ -12,7 +12,7 @@ export async function getAllPosts() {
     },
   };
   const response = await fetch(
-    `${API_SOCIAL_URL}/posts?sort=owner&sortOrder=desc&_author=true&_reactions=true&_comments=true&limit=100&offset=1`,
+    `${API_SOCIAL_URL}/posts?sort=owner&sortOrder=desc&_author=true&_reactions=true&_comments=true&limit=100&offset=100`,
     authOptions
   );
   const data = await response.json();

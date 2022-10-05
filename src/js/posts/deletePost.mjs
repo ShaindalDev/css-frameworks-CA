@@ -1,18 +1,19 @@
+import { API_SOCIAL_URL } from "../api/constants.mjs";
+import { authFetch } from "../api/authFetch.mjs";
+// const deletePost = document.getElementById("deletePost");
+// const token = localStorage.getItem("_token");
 
-const deletePost = document.getElementById("deletePost");
-const mainURL = "https://nf-api.onrender.com/api/v1";
-const token = localStorage.getItem("_token");
-
-export function deletePost() {
-    const deletePosts = {
-        method: 'DELETE',
-        headers: {
-          Authorization: `Bearer ${token}`,
-        }
-      };
-      
-       fetch(`${mainURL}/social/posts/30`, deletePosts)
-        .then((response) => response.json())
-        .then((json) => console.log(json));
+const action = "/posts";
+const method = "delete";
+export async function deletePost() {
+    if (!id) {
+      throw new Error("To delete a post it requires a Post ID!");
     }
-    deletePost();
+      const deletePostUrl = `${API_SOCIAL_URL}${action}/${id}`;
+
+      const response = await authFetch(deletePostUrl, {
+        method,
+      })
+      return await response.json();
+    }
+    
