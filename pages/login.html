@@ -71,19 +71,19 @@
                 <div class="col">
                   <div class="mb-3">
                     <label for="userName" class="col-form-label" aria-required="true">Name:</label>
-                    <input type="text" class="form-control" id="userName" name="userName" />
+                    <input type="text" class="form-control" id="userName" name="userName" required pattern="^[\w]+$" title="Username must only be lower/upper case letter, numbers and underscore"/>
                   </div>
                 </div>
                 <div class="col">
                   <div class="mb-3">
                     <label for="userEmail" class="col-form-label" aria-required="true">Email:</label>
-                    <input type="email" class="form-control" id="userEmail" name="userEmail" />
+                    <input type="email" class="form-control" id="userEmail" name="userEmail" required pattern="^[\w\-.]+@(stud.)?noroff.no$"/>
                   </div>
                 </div>
                 <div class="col">
                   <div class="mb-3">
                     <label for="userPassword" class="col-form-label" aria-required="true">Password:</label>
-                    <input type="password" class="form-control" id="userPassword" name="userPassword" />
+                    <input type="password" class="form-control" id="userPassword" name="userPassword" required/>
                   </div>
                 </div>
                 <div class="col">

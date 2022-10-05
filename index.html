@@ -201,40 +201,42 @@
               class="form-control bg-dim text-muted"
               id="postTitle"
               name="postTitle"
-              placeholder="Title for your post"
+              placeholder=""
+              required
             />
             <label for="postTitle" class="col-form-label"></label>
           </div>
           <div class="form-floating mb-2">
-            <textarea
+            <textarea type="text"
               class="form-control bg-dim text-muted"
               placeholder="What's your thoughts today"
               id="postContent"
               style="height: 100px"
+              required
             ></textarea>
             <label for="postContent"></label>
           </div>
           <div class="form-floating mb-2">
-            <textarea
+            <input type="text"
               class="form-control bg-dim text-dtext"
               placeholder="i.e blog, development, opinion.."
               id="postTags"
-            ></textarea>
+            >
             <label for="postTags"></label>
           </div>
           <div class="form-floating mb-2">
-            <textarea
+            <input type="url"
               class="form-control bg-dim text-muted"
               placeholder="media url"
               id="postMedia"
-            ></textarea>
-            <label for="postTags"></label>
+            >
+            <label for="postMedia"></label>
           </div>
           <button
             class="btn btn-primary mt-2 mb-3"
             id="postButton-submit"
           >
-            Update
+            Update Post
           </button>
         </form>
               </div>
@@ -255,7 +257,7 @@
               class="form-control bg-dim text-muted"
               id="postTitle"
               name="postTitle"
-              placeholder="Title for your post"
+              placeholder="Title for your post" required
             />
             <label for="postTitle" class="col-form-label"></label>
           </div>
@@ -264,25 +266,25 @@
               class="form-control bg-dim text-muted"
               placeholder="What's your thoughts today"
               id="postContent"
-              style="height: 100px"
+              style="height: 100px" required maxlength="350"
             ></textarea>
             <label for="postContent">What's your thoughts today?</label>
           </div>
           <div class="form-floating mb-2">
-            <textarea
+            <input
               class="form-control bg-dim text-dtext"
               placeholder="i.e blog, development, opinion.."
               id="postTags"
-            ></textarea>
+            >
             <label for="postTags">Your tags here</label>
           </div>
           <div class="form-floating mb-2">
-            <textarea
+            <input
               class="form-control bg-dim text-muted"
               placeholder="media url"
               id="postMedia"
-            ></textarea>
-            <label for="postTags">enter media url here</label>
+            >
+            <label for="postMedia">enter media url here</label>
           </div>
           <button
             class="btn btn-primary mt-2 mb-3"
@@ -292,15 +294,16 @@
           </button>
         </form>
       </div>
+      <hr>
       <div class="dropdown" id="filteringPosts">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Filter</a>
+        <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Filter</a>
         <ul class="dropdown-menu">
           <li><a class="dropdown-item" href="#">Newest</a></li>
           <li><a class="dropdown-item" href="#">My posts</a></li>
           <li><a class="dropdown-item" href="#">Something else here</a></li>
         </ul>
       </div>
-      <div class="postWrapper row mb-2 mt-4 pt-4 border-top">
+      <div class="postWrapper row mb-2 mt-4 pt-4">
 
         <div class="postContainer col-md-6"></div>
       </div>
