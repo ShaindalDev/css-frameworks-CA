@@ -18,7 +18,7 @@ const postContainer = document.getElementById("usersPostWrapper");
  */
 export async function getUsersPosts() {
     const response = await fetch(
-      `${API_SOCIAL_URL}${postsURL}?_author=true&_comments=true&_reactions=true&limit=700&offset=1`,
+      `${API_SOCIAL_URL}${postsURL}?_author=true&_comments=true&_reactions=true&limit=300&offset=200`,
       {
         method: "get",
         headers: {

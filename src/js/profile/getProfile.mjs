@@ -12,7 +12,7 @@ const profileFriends = document.getElementById("offcanvasRight");
 const action = "/profiles";
 
 const profileWrapper = document.getElementById("profileWrapper");
-async function makeProfile() {
+async function getProfile() {
   // const authOptions = {
   //   headers: {
   //     "Content-type": "application/json",
@@ -99,4 +99,4 @@ async function makeProfile() {
   }
   console.log(profileWrapper);
 }
-makeProfile();
+getProfile();

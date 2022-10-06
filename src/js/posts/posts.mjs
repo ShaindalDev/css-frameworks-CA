@@ -12,7 +12,7 @@ export async function getAllPosts() {
     },
   };
   const response = await fetch(
-    `${API_SOCIAL_URL}/posts?sort=owner&sortOrder=desc&_author=true&_reactions=true&_comments=true&limit=100&offset=100`,
+    `${API_SOCIAL_URL}/posts?sort=owner&sortOrder=desc&_author=true&_reactions=true&_comments=true&limit=300&offset=1`,
     authOptions
   );
   const data = await response.json();
