@@ -12,6 +12,10 @@ const profileFriends = document.getElementById("offcanvasRight");
 const action = "/profiles";
 
 const profileWrapper = document.getElementById("profileWrapper");
+/**
+ * This will get the user's profile from the API when you are logged in with a valid user email and password. 
+ * it displays all the info of the user that is put in during registration process. 
+ */
 async function getProfile() {
   // const authOptions = {
   //   headers: {

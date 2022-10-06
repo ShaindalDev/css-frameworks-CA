@@ -1,5 +1,8 @@
 import { getUsersPosts, updatePost } from "../posts/index.mjs";
-
+/**
+ * This is an update post even handler for the update post form and button. 
+ * This is where everything is controlled when it comes to updating a user's post
+ */
 export async function setUpdatePostListener() {
   const form = document.querySelector("#updatePost");
 

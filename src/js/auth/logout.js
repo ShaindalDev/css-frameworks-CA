@@ -1,6 +1,6 @@
 /**
- * This will run when you click the log out button and remove your token from the localStorage.
- * eventListener on the logout button, and remove auth token from storage, redirect you to login page. 
+ * This will run when you click the log out button and remove token, email and user name from the localStorage.
+ * eventListener on the logout button, and remove everything from LocalStorage, redirect you to login page. 
  * 
  */
 const logout = document.getElementById("logout");

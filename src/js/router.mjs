@@ -1,3 +1,6 @@
+/**
+ * This is a router file for all eventListeners, will be used in future versions of the application. 
+ */
 // import * as templates from "./templates/index.mjs";
 
 import * as listeners from "./handlers/login.mjs";

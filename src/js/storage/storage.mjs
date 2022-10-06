@@ -1,3 +1,8 @@
+/**
+ * This stores the auth token, profile info like name, email etc in localStorage.
+ * @param {*} key 
+ * @param {*} value 
+ */
 export function save(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
   }

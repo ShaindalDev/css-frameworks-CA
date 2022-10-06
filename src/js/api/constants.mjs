@@ -1,3 +1,6 @@
+/**
+ * This is where all important global consts that is being reused all over is stored. 
+ */
 export const API_BASE_URL = 'https://nf-api.onrender.com';
 export const API_BASE = '/api/v1';
 export const API_SOCIAL = '/social';

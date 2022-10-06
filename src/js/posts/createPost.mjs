@@ -3,7 +3,10 @@ import { API_SOCIAL_URL } from "../api/constants.mjs";
 const createPost = document.getElementById("postForm");
 const postButton = document.getElementById("postButton-submit");
 const token = localStorage.getItem("_token");
-
+/**
+ * This let's the user create a post from their profile and put's it on the API for everyone to see. 
+ * here is also the eventListener for the button that makes the POST request to the API. 
+ */
 createPost.addEventListener("submit", (event) => {
   event.preventDefault();
   const postTitle = createPost.postTitle.value;

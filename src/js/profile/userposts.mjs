@@ -13,8 +13,10 @@ const postContainer = document.getElementById("usersPostWrapper");
 
 
 /**
- * This is where all the info from the API is being fetched
- * and authentication is being checked
+ * This will get all the user's post that has been created. 
+ * A filter method is used to show only the user's post and not all other posts. 
+ * Authentication is run here as well to check if you are logged in with a valid user email and password
+ * @param {string} token This is the token that has been stored when login function was run
  */
 export async function getUsersPosts() {
     const response = await fetch(

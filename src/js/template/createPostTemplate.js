@@ -1,5 +1,10 @@
+/**
+ * This is not in use for the time being. Will be added in future versions of the application
+ * @param {*} createPost 
+ * @returns 
+ */
 export function createPost(createPost) {
-    const template = document.querySelector("template#nft");
+    const template = document.querySelector("");
   
     if (template) {
       const item = template.content.cloneNode(true)

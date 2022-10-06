@@ -1,9 +1,14 @@
+
 import { API_SOCIAL_URL } from "../api/constants.mjs";
 export const token = localStorage.getItem("_token");
 
 export const postContainer = document.querySelector(".postWrapper");
-// export const deletePostButton = document.getElementById("deletePost");
-
+/**
+ * This will get all posts from the API that is used in this project
+ * it uses a forEach loop to loop trough the DB and display you all posts created on the DB
+ * @param {string} token This is the authentication token stored from the API
+ * 
+ */
 export async function getAllPosts() {
   const authOptions = {
     headers: {
@@ -12,7 +17,7 @@ export async function getAllPosts() {
     },
   };
   const response = await fetch(
-    `${API_SOCIAL_URL}/posts?sort=owner&sortOrder=desc&_author=true&_reactions=true&_comments=true&limit=300&offset=1`,
+    `${API_SOCIAL_URL}/posts?sort=owner&sortOrder=desc&_author=true&_reactions=true&_comments=true&limit=300&offset=100`,
     authOptions
   );
   const data = await response.json();

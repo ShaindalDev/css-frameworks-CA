@@ -3,7 +3,11 @@ import { authFetch } from "../api/authFetch.mjs";
 
 const action = "/posts";
 const method = "put";
-
+/**
+ * This is the function that is run when a user want to update a post they have created. And makes a PUT request to the API so that the updated data can be displayed for everyone.
+ * @param {*} postData 
+ * @returns 
+ */
 export async function updatePost(postData) {
     if (!postData.id) {
         throw new Error("To update a post it requires a postID");

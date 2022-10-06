@@ -1,7 +1,10 @@
 import { API_SOCIAL_URL } from "../api/constants.mjs";
 
 const registerForm = document.getElementById("registerForm");
-
+/**
+ * This is the register function with evenListener on the register button. 
+ * this takes info from the registration form and register it to the API, if all is valid a user is registered to the application.
+ */
 registerForm.addEventListener("submit", (event) => {
   console.log('test')
   event.preventDefault();

@@ -3,7 +3,11 @@ import { authFetch } from "../authFetch.mjs";
 
 const action = "/profiles";
 const method = "put";
-
+/**
+ * This is run along side with the handler for updating a user profile, that is located in the handlers folder under file UpdateProfile.mjs.
+ * @param {*} profileData 
+ * @returns 
+ */
 export async function uppdateProfile(profileData) {
     if (!profileData.name) {
         throw new Error("Check your form");

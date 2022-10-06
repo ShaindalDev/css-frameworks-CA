@@ -1,6 +1,9 @@
 import { getProfile, updateProfile } from "../api/profile/index.mjs";
 import { profile } from "../storage/storage.mjs";
-
+/**
+ * This is where everything is handled when a user want's to update their user profile. 
+ * The update user form is grabbed here and put's the updated profile on the API. 
+ */
 export async function setUpdateProfileListener() {
   const form = document.querySelector("#updateProfileForm");
 
