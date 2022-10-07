@@ -8,6 +8,7 @@ const token = localStorage.getItem("_token");
  * here is also the eventListener for the button that makes the POST request to the API. 
  */
 createPost.addEventListener("submit", (event) => {
+  console.log("this was clicked");
   event.preventDefault();
   const postTitle = createPost.postTitle.value;
   const postContent = createPost.postContent.value;
@@ -67,5 +68,6 @@ function makePost(){
       .then((response) => response.json())
       .then((json) => console.log(json));
   }
+  console.log("create post was loaded");
   
     //  makePost();

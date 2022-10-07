@@ -9,6 +9,7 @@ import { deletePost } from "../posts/deletePost.mjs";
 const postsURL = "/posts";
 const token = localStorage.getItem("_token");
 const localEmail = localStorage.getItem("_email");
+const userName = localStorage.getItem("profile");
 const postContainer = document.getElementById("usersPostWrapper");
 
 
@@ -20,7 +21,7 @@ const postContainer = document.getElementById("usersPostWrapper");
  */
 export async function getUsersPosts() {
     const response = await fetch(
-      `${API_SOCIAL_URL}${postsURL}?_author=true&_comments=true&_reactions=true&limit=300&offset=200`,
+      `${API_SOCIAL_URL}${postsURL}?sort=owner&sortOrder=desc&_author=true&_comments=true&_reactions=true`,
       {
         method: "get",
         headers: {
@@ -37,7 +38,7 @@ export async function getUsersPosts() {
  * Filter function, to filter all the data that comes from the API, down to a single users data.
  */
       const filteredData = data.filter((filtered) => {
-        return filtered.author.email == localEmail;
+        return filtered.author.name == userName;
       });
       postContainer.innerHTML = "";
       filteredData.forEach((filteredData) => {
@@ -59,12 +60,13 @@ export async function getUsersPosts() {
                 <p class="mb-0 small">${filteredData.title}</p>
               </div>
             </div>
+            <button class="btn btn-primary tex-dtext" id="removePost"data-id"${filteredData.id}">Delete Post</button>
             <div class="dropdown">
              <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button> <i class="bi bi-chevron-down"></i>
               <a href="#" class="text-dtext btn btn-secondary-soft-hover py-1 px-2"  data-bs-toggle="dropdown">
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item text-dtext" href="#">Delete Post</a></li>
+                <li><a class="dropdown-item text-dtext" id="removePost" href="#" data-id="${filteredData.id}">Delete Post</a></li>
                 <li><a class="dropdown-item text-dtext" href="#">Update Post </a></li>
               </ul>
             </div>
