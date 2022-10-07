@@ -17,14 +17,16 @@ export async function getAllPosts() {
     },
   };
   const response = await fetch(
-    `${API_SOCIAL_URL}/posts?sort=created&sortOrder=desc&_author=true&_reactions=true&_comments=true&limit=100&offset=1`,
+    `${API_SOCIAL_URL}/posts?sort=created&sortOrder=desc&_author=true&_reactions=true&_comments=true&`,
     authOptions
   );
   const data = await response.json();
   console.log(data);
   postContainer.innerHTML = "";
   data.forEach(function (data) {
-    postContainer.innerHTML += `<div class="postContainer col-md-6"><div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow p-2 h-md-250 position-relative">
+    postContainer.innerHTML += `
+    <div class="postContainer col-md-6"><div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow p-2 h-md-250 position-relative">
+    <a href="../pages/post.html?id=${data.id}"><button class="btn btn-primary">View Post</button></a>
         <div class="col p-4 d-flex flex-column position-static">
           <strong class="d-inline-block mb-2 text-primary">${data.author.name}</strong>
           <h3 class="mb-0">${data.title}</h3>
