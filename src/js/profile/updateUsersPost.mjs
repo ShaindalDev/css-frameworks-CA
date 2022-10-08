@@ -8,7 +8,7 @@ const method = "put";
  * @param {*} postData 
  * @returns 
  */
-export async function updatePost(postData) {
+export async function updateUsersPost(postData) {
     if (!postData.id) {
         throw new Error("To update a post it requires a postID");
     }

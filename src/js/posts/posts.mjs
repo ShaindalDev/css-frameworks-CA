@@ -17,7 +17,7 @@ export async function getAllPosts() {
     },
   };
   const response = await fetch(
-    `${API_SOCIAL_URL}/posts?sort=created&sortOrder=desc&_author=true&_reactions=true&_comments=true&`,
+    `${API_SOCIAL_URL}/posts?sort=created&sortOrder=desc&_author=true&_reactions=true&_comments=true`,
     authOptions
   );
   const data = await response.json();
@@ -113,9 +113,7 @@ export async function getAllPosts() {
   if (!response.ok) {
     throw new Error("HTTP error! status: ${response.status}");
   }
-
-  console.log(postContainer);
-}
+};
 
 
 

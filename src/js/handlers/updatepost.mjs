@@ -1,4 +1,4 @@
-import { getUsersPosts, updatePost } from "../posts/index.mjs";
+import { getUsersPosts, updateUsersPost } from "../profile/index.mjs";
 /**
  * This is an update post even handler for the update post form and button. 
  * This is where everything is controlled when it comes to updating a user's post
@@ -32,7 +32,7 @@ export async function setUpdatePostListener() {
       console.log('success');
         
       //calling the function to send to API
-      updatePost(post)
+      updateUsersPost(post)
     });
   }
 

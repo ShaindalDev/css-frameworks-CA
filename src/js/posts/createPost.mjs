@@ -8,7 +8,7 @@ const token = localStorage.getItem("_token");
  * here is also the eventListener for the button that makes the POST request to the API. 
  */
 createPost.addEventListener("submit", (event) => {
-  console.log("this was clicked");
+  console.log("this was a test");
   event.preventDefault();
   const postTitle = createPost.postTitle.value;
   const postContent = createPost.postContent.value;
@@ -16,7 +16,7 @@ createPost.addEventListener("submit", (event) => {
   const postTags = createPost.postTags.value
   
   try {
-    fetch(`${API_SOCIAL_URL}/posts`, {
+    fetch(`${API_SOCIAL_URL}/posts/`, {
       method: "POST",
       body: JSON.stringify({
         title: postTitle,
@@ -34,7 +34,8 @@ createPost.addEventListener("submit", (event) => {
       .then((data) => {
         console.log(data);
         // localStorage.setItem("_token", data.accessToken);
-        location.href = "/pages/index.html";
+        // location.href = "/index.html"
+        location.reload();
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -51,10 +52,10 @@ function makePost(){
     const makePost = {
       method: 'POST',
       body: JSON.stringify({
-        title: 'This a test',   // Required
-        body: "Testing to see if i get the correct feed i want, and with even more text to fill up some space with random stuff",    // Optional
-        tags: ['test, exploring'],  // Optional
-        media: 'https://xsgames.co/randomusers/avatar.php?g=male',    // Optional
+        title: 'what does the weekend bring?',   // Required
+        body: "Have the weekend brought any fun so far?",    // Optional
+        tags: ['weekend, test'],  // Optional
+        media: 'https://picsum.photos/id/659/2731/1536',    // Optional
         owner: "Shaindal"
 
       }),
@@ -68,6 +69,44 @@ function makePost(){
       .then((response) => response.json())
       .then((json) => console.log(json));
   }
-  console.log("create post was loaded");
+  
   
     //  makePost();
+
+
+    // #### TEST SECTION ####
+    //NEW TESTING CREATE POST
+// const createPostForm = document.getElementById("postForm");
+// const createPostButton = document.getElementById("postButton-submit");
+
+// createPostForm.addEventListener("submit", (e) => {
+//   console.log("this was clicked");
+//   e.preventDefault();
+
+//   createPost(token, createPostForm);
+// });
+
+// export async function createPost(token, postContent, mediaURL) {
+//   const options = {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json; charset-UTF-8",
+//       Authorization: `Bearer ${token}`,
+//     },
+//     body: JSON.stringify({
+//       title: " ",
+//       body: postContent.value,
+//       tags: [" "],
+//       media: mediaURL.value || "https://picsum.photos/id/664/2513/1669",
+//     }),
+//   };
+
+//   try {
+//     const response = await fetch(`${API_SOCIAL_URL}/posts/`, options);
+//     await response.json();
+//     location.reload();
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+// END OF TESTING
