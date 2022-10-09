@@ -45,7 +45,7 @@ export function setSearchPostListener(postsData) {
             searchFeed.appendChild(createApost(post));
         });
         if(result.length === 0) {
-            searchFeed.innerHTML = `<p class="py-1 text-center">Ohh.. sorry we couldnt find it </p>`;
+            searchFeed.innerHTML = `<p class="py-1 text-center">Ohh.. sorry we couldn't find it </p>`;
         }
     }
     searchInput.addEventListener("keyup", displayResult);
