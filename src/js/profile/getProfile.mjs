@@ -61,7 +61,7 @@ async function getProfile() {
               <!-- Follower, post and following - end -->
             </div>
             <hr>
-            <button class="btn btn-primary" type="button">Edit Profile</button>
+            <a href="./updateProfile.html"><button class="btn btn-primary" type="button">Edit Profile</button></a>
             <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Friends</button>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
               <div class="offcanvas-header">
@@ -101,6 +101,5 @@ async function getProfile() {
   if (!response.ok) {
     throw new Error("HTTP Error! status: ${response.status}");
   }
-  console.log(profileWrapper);
 }
 getProfile();

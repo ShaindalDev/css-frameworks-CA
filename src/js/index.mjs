@@ -1,29 +1,30 @@
 
 import * as posts from "./posts/index.mjs";
 
-import router from "./router.mjs";
 
+import * as listeners from "./handlers/index.mjs";
 import * as search from "./components/searchFunction.mjs";
 
-import { createPost } from "./posts/createPost2.mjs";
+import { createPost }  from "./posts/createPost2.mjs";
 
 import { updateUsersPost } from "./profile/updateUsersPost.mjs";
 
 import { deletePost} from "./posts/deletePost.mjs";
 
-search.setSearchPostListener();
+
+// search.setSearchPostListener();
+listeners.setCreatePostListener();
 
 
-
-
-router();
 posts.getAllPosts();
 
 // deletePost(3638)
 
 // createPost({
-//     title: "this the first test to delete",
-//     body: "ignore this test post, it's for testing my delete"
+//     title: "Sleepless nights?",
+//     body: "Sleepless nights brings testing, not allways a great idea tho",
+//     tags: ["sleepless, testing, coffee"],
+//     media: "https://picsum.photos/id/683/5184/2672"
 // })
 
 // updateUsersPost({

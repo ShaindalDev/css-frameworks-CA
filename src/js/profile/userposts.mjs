@@ -1,5 +1,7 @@
 //importing from other JS files
+import { authFetch } from "../api/authFetch.mjs";
 import { API_SOCIAL_URL } from "../api/constants.mjs";
+
 import { setUpdatePostListener } from "../handlers/updatepost.mjs";
 import { deletePost } from "../posts/deletePost.mjs";
 // import { formatTimeChange } from "../components/formatTime.mjs";
@@ -20,8 +22,9 @@ const usersPostContainer = document.getElementById("usersPostWrapper");
  * @param {string} token This is the token that has been stored when login function was run
  */
 export async function getUsersPosts() {
+  
     const response = await fetch(
-      `${API_SOCIAL_URL}${postsURL}?sort=owner&sortOrder=desc&_author=true&_comments=true&_reactions=true`,
+      `${API_SOCIAL_URL}${postsURL}/?sort=created&sortOrder=desc&_author=true&_comments=true&_reactions=true`,
       {
         method: "get",
         headers: {
@@ -33,7 +36,6 @@ export async function getUsersPosts() {
     );
     const data = await response.json();
     // console.log(data);
-//Filter the data received from API
 /**
  * Filter function, to filter all the data that comes from the API, down to a single users data.
  */
@@ -197,13 +199,3 @@ getUsersPosts();
 // ######## TESTING SECTION FOR THIS FILE ########
 
 // ######## END OF TESTING SECTION ########
-
-//get post by ID
-
-//Update a post
-
-//delete a post from feed
-
-//filter posts
-
-//search the post feed

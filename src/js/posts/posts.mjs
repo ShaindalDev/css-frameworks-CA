@@ -21,12 +21,23 @@ export async function getAllPosts() {
     authOptions
   );
   const data = await response.json();
+
   console.log(data);
   postContainer.innerHTML = "";
   data.forEach(function (data) {
     postContainer.innerHTML += `
     <div class="postContainer col-md-6"><div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow p-2 h-md-250 position-relative">
     <a href="../pages/post.html?id=${data.id}"><button class="btn btn-primary">View Post</button></a>
+    <div class="dropdown">
+    <button class="btn btn-dark dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button> <i class="bi bi-chevron-down"></i>
+     <a href="#" class="text-dtext btn btn-secondary-soft-hover py-1 px-2"  data-bs-toggle="dropdown">
+     </a>
+     <ul class="dropdown-menu dropdown-menu-end">
+       <li><i class="fa-solid fa-pen"></i><a class="dropdown-item text-dtext underline-hover" data-bs-toggle="offcanvas" href="#offcanvasPost" role="button" aria-controls="offcanvas">Update Post</a></li>
+       <i class="fa-solid fa-trash-can">
+       <li><a class="underlineHover dropdown-item text-dtext" id="deletePost" href="#">Delete Post  </a></li></i>
+     </ul>
+   </div>
         <div class="col p-4 d-flex flex-column position-static">
           <strong class="d-inline-block mb-2 text-primary">${data.author.name}</strong>
           <h3 class="mb-0">${data.title}</h3>
@@ -40,18 +51,7 @@ export async function getAllPosts() {
         <div class="col-auto d-none d-lg-block">
           <img src="${data.author.avatar}" class="bd-placeholder-img" width="150" height="150" role="img" aria-label="Placeholder: Thumbnail" preserveaspectratio="xMidYMid slice" focusable="false">
         </div>
-        <div class="dropdown">
-        <button class="btn btn-dark dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button> <i class="bi bi-chevron-down"></i>
-         <a href="#" class="text-dtext btn btn-secondary-soft-hover py-1 px-2"  data-bs-toggle="dropdown">
-         </a>
-         <ul class="dropdown-menu dropdown-menu-end">
-         
-           <li><i class="fa-solid fa-pen"></i><a class="dropdown-item text-dtext underline-hover" data-bs-toggle="offcanvas" href="#offcanvasPost" role="button" aria-controls="offcanvas">Update Post</a></li>
-           <i class="fa-solid fa-trash-can">
-           <li><a class="underlineHover dropdown-item text-dtext" id="deletePost" href="#">Delete Post  </a></li></i>
-           
-         </ul>
-       </div>
+
         <ul class="nav nav-stack py-3 small">
                 <li class="nav-item">
                   <a class="nav-link active" href="#">Likes: ${data._count.reactions}<i class="fa-solid fa-heart"></i></a>

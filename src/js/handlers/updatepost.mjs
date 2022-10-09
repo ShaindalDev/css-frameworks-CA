@@ -4,7 +4,7 @@ import { getUsersPosts, updateUsersPost } from "../profile/index.mjs";
  * This is where everything is controlled when it comes to updating a user's post
  */
 export async function setUpdatePostListener() {
-  const form = document.querySelector("#updatePost");
+  const form = document.querySelector("#updatePostForm");
 
   const url = new URL(location.href);
   const id = url.searchParams.get("id");
