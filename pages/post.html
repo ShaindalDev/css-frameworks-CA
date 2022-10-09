@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/0dc149767b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="../src/js/auth/check.js" defer></script>
+    <script src="../src/js/auth/logout.js" defer></script>
+    <script src="../src/js/posts/details.mjs" type="module" defer></script>
+    <link rel="stylesheet" href="/dist/css/styles.css" />
+    <title>Social Verse | Post Details</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="/images/placeholder.com-logo1.png"
+            alt=""
+            width="150"
+            height="35"
+            class="d-inline-block align-text-top"
+          />
+        </a>
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <input
+            type="search"
+            class="form-control form-control-dark"
+            placeholder="Search..."
+            aria-label="Search"
+          />
+        </form>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/profile.html">Profile</a>
+          </li>
+          <li class="nav-item" id="loginLink">
+            <a class="nav-link" href="/pages/login.html">Login</a>
+          </li>
+          <li class="nav-item" id="logoutLink">
+            <button type="button" class="nav-link" id="logout">Logout</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main class="container mt-4 shadow p-2 mb-5 bg-body rounded">
+      <!--sTART OF SINGEL POST CARD-->
+      <div class="product-details">
+        <div class="breadcrumb-nav">
+          <button class="btn btn-link" onclick="history.back()">Back</button>
+        </div>
+      </div>
+      <div class="details"></div>
+      <!--END OF SINGEL POST CARD-->
+    </main>
+    <footer class="footer mt-auto py-3 bg-light">
+      <div class="container">
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/profile.html">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/login.html">Login</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+  </body>
+</html>

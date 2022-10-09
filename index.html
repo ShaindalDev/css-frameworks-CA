@@ -1,14 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/dist/css/styles.css">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Test</h1>
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/0dc149767b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="src/js/index.mjs" type="module" defer></script>
+    <link rel="stylesheet" href="/dist/css/styles.css" />
+    <title>Social Verse | Home</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="/images/placeholder.com-logo1.png"
+            alt=""
+            width="150"
+            height="35"
+            class="d-inline-block align-text-top"
+          />
+        </a>
+         
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <input
+            type="search"
+            id="searchBar"
+            name="searchBar"
+            class="form-control form-control-dark"
+            placeholder="Search..."
+            aria-label="Search"
+          />
+        </form>
+        <div id="searchResultFeed" class="pb-3 pt-2"></div>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/profile.html">Profile</a>
+          </li>
+          <li class="nav-item" id="loginLink">
+            <a class="nav-link" href="/pages/login.html">Login</a>
+          </li>
+          <li class="nav-item" id="logoutLink">
+            <button type="button" class="nav-link" id="logout">Logout</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+          <!--Start of post editing-->
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasPost" aria-labelledby="offcanvasPostLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasPostLabel">Updating your post</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <div>
+                <h4>TEst</h4>
+        <form id="postForm">
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control bg-dim text-muted"
+              id="postTitle"
+              name="postTitle"
+              placeholder=""
+              required
+            />
+            <label for="postTitle" class="col-form-label"></label>
+          </div>
+          <div class="form-floating mb-2">
+            <textarea type="text"
+              class="form-control bg-dim text-muted"
+              placeholder="What's your thoughts today"
+              id="postContent"
+              style="height: 100px"
+              required
+            ></textarea>
+            <label for="postContent"></label>
+          </div>
+          <div class="form-floating mb-2">
+            <input type="text"
+              class="form-control bg-dim text-dtext"
+              placeholder="i.e blog, development, opinion.."
+              id="postTags"
+            >
+            <label for="postTags"></label>
+          </div>
+          <div class="form-floating mb-2">
+            <input type="url"
+              class="form-control bg-dim text-muted"
+              placeholder="media url"
+              id="postMedia"
+            >
+            <label for="postMedia"></label>
+          </div>
+          <button
+            class="btn btn-primary mt-2 mb-3"
+            id="postButton-submit"
+          >
+            Update Post
+          </button>
+        </form>
+              </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main class="container mt-4 shadow-sm p-3 mb-5 bg-body rounded">
+      <div class="container border-light bg-lighter" id="createPost">
+        <h1>New post</h1>
+        <form id="postForm">
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control bg-dim text-muted"
+              id="postTitle"
+              name="postTitle"
+              placeholder="Title for your post" required
+            />
+            <label for="postTitle" class="col-form-label"></label>
+          </div>
+          <div class="form-floating mb-2">
+            <textarea
+              class="form-control bg-dim text-muted"
+              placeholder="What's your thoughts today"
+              id="postContent"
+              style="height: 100px" required maxlength="350"
+            ></textarea>
+            <label for="postContent">What's your thoughts today?</label>
+          </div>
+          <div class="form-floating mb-2">
+            <input
+            type="text"
+              class="form-control bg-dim text-dtext"
+              placeholder="i.e blog, development, opinion.."
+              id="postTags"
+            >
+            <label for="postTags">Your tags here</label>
+          </div>
+          <div class="form-floating mb-2">
+            <input
+            type="url"
+              class="form-control bg-dim text-muted"
+              placeholder="media url"
+              id="postMedia"
+            >
+            <label for="postMedia">enter media url here</label>
+          </div>
+          <button
+            class="btn btn-primary mt-2 mb-3"
+            id="postButton-submit"
+          >
+            Post
+          </button>
+        </form>
+      </div>
+      <hr>
+      <div class="dropdown" id="filteringPosts">
+        <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Filter</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Newest</a></li>
+          <li><a class="dropdown-item" href="#">My posts</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div>
+      <div class="postWrapper row mb-2 mt-4 pt-4">
+
+        <!-- <div class="postContainer col-md-6"></div> -->
+      </div>
+    </main>
+    <footer class="footer mt-auto py-3 bg-light">
+      <div class="container">
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/profile.html">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/login.html">Login</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    
+    <script src="./src/js/auth/check.js"></script>
+    <script src="src/js/auth/logout.js"></script>
+    <!-- <script src="src/js/posts/createPost2.mjs" type="module"></script> -->
+    <script src="src/js/posts/posts.mjs" type="module"></script>
+    <script src="src/js/components/searchFunction.mjs" type="module"></script>
+  </body>
 </html>

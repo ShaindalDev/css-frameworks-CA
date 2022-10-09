@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/0dc149767b.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/dist/css/styles.css" />
+    <title>Social Verse | Update Profile</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="/images/placeholder.com-logo1.png"
+            alt=""
+            width="150"
+            height="35"
+            class="d-inline-block align-text-top"
+          />
+        </a>
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <input
+            type="search"
+            class="form-control form-control-dark"
+            placeholder="Search..."
+            aria-label="Search"
+          />
+        </form>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/profile.html">Profile</a>
+          </li>
+          <li class="nav-item" id="loginLink">
+            <a class="nav-link" href="/pages/login.html">Login</a>
+          </li>
+          <li class="nav-item" id="logoutLink">
+            <button type="button" class="nav-link" id="logout">Logout</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main class="container mt-4 shadow-sm p-3 mb-5 bg-body border border-1 rounded">
+      <!--Start of post editing-->
+          <div>
+            <h4>Update your Post</h4>
+            <form id="updatePostForm">
+                <div class="row row-cols-1">
+                  <div class="col">
+                    <div class="mb-3">
+                      <label for="postTitle" class="col-form-label">Title:</label>
+                      <input type="text" class="form-control" id="postTitle" name="postTitle" required/>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="mb-3">
+                      <label for="postContent" class="col-form-label">Content:</label>
+                      <textarea type="text" class="form-control" id="postContent" name="postContent" required></textarea>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="mb-3">
+                      <label for="postTags" class="col-form-label">Tags:</label>
+                      <input type="text" class="form-control" id="postTags" name="postTags" />
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="mb-3">
+                      <label for="postMedia" class="col-form-label">Media URL:</label>
+                      <input type="url" class="form-control" id="postMedia" name="postMedia" />
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-secondary">
+                  Close
+                </button>
+                <button class="btn btn-primary" id="updatePostForm">Update Post</button>
+              </form>
+          </div>
+    </main>
+    <footer class="footer mt-auto py-3 bg-light">
+      <div class="container">
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/profile.html">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/login.html">Login</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./src/js/auth/check.js"></script>
+    <script src="src/js/auth/logout.js"></script>
+    <script src="src/js/index.mjs" type="module"></script>
+    <script src="src/js/profile/getProfile.mjs" type="module"></script>
+    <script src="../src/js/profile/updateUsersPost.mjs" type="module"></script>
+  </body>
+</html>
