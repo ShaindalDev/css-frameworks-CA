@@ -6,11 +6,14 @@ import { authFetch } from "../api/authFetch.mjs";
 const action = "/posts";
 const method = "delete";
 const removePost = document.getElementById("removePost");
+
+
 /**
  * This is the delete post function that is run when a user want to delete a post they have created. This requires the POST ID to be run otherwise it will throw an error.
- * The post will be delete from the API DB.
+ * The post will be delete from the API DB. This is then called in the eventListener from handlers folder. 
+ * @param {integer} id 
+ * @returns 
  */
-
 export async function deletePost(id) {
   if (!id) {
     throw new Error("To delete a post it requires a Post ID!");

@@ -4,7 +4,9 @@ const singlePostUrl =
 const token = localStorage.getItem("_token");
 
 const singelPostModal = document.getElementById("singlePostModal");
-//get all posts feed
+/**
+ * This 
+ */
 async function getSinglePost() {
   const authOptions = {
     headers: {

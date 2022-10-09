@@ -4,7 +4,10 @@ import { authFetch } from "../api/authFetch.mjs";
 const action = "/posts";
 const method = "post";
 
-
+/**
+ * This uses the POST method so that the post you create gets up on the API. This is the createPost function in it self, which then is called in the eventlistener in handlers folder.
+ * @param {*} postData 
+ */
 export async function createPost(postData) {
     const createPostURL = API_SOCIAL_URL + action;
 
