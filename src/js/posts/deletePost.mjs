@@ -24,9 +24,5 @@ export async function deletePost(id) {
   return await response.json();
 }
 
-console.log("delete post module loaded");
+// console.log("delete post module loaded");
 
-// removePost.addEventListener("click", (e) => {
-//   let id = parseInt(this.dataset.id);
-//   deletePost(id);
-//  });

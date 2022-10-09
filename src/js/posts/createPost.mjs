@@ -9,11 +9,11 @@ const token = localStorage.getItem("_token");
  */
 createPost.addEventListener("submit", (event) => {
   console.log("this was a test");
-  event.preventDefault();
+  // event.preventDefault();
   const postTitle = createPost.postTitle.value;
   const postContent = createPost.postContent.value;
-  const postMedia = createPost.postMedia.value
   const postTags = createPost.postTags.value
+  const postMedia = createPost.postMedia.value
   
   try {
     fetch(`${API_SOCIAL_URL}/posts/`, {
