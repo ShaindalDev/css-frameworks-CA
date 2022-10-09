@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/node_modules/feather-icons/dist/feather.min.js"></script>
+    <link rel="stylesheet" href="/dist/css/styles.css">
+    <title>Social Media app</title>
+</head>
+<body>
+  <!--Top nav start-->
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">
+            <img src="/images/placeholder.com-logo1.png" alt="" width="150" height="35" class="d-inline-block align-text-top">
+          </a>
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/pages/profile.html">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/login.html">Login</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!--Top nav end-->
+      <!--Main content start-->
+      <main class="container my-3 bg-body rounded">
+        <!--profile nav with profile picture-->
+    <div class="profile-heading mt-4 mb-4 p-2 bg-lighter rounded border border-light">
+            <div class="h-50px" style="background-image:url(#); background-position: center; background-size: cover; background-repeat: no-repeat"></div>
+            <div class="card-body pt-0 border-0">
+              <div class="text-center">
+                <div class="text-center">
+                  <!-- profile image -->
+                  <div class="profile-img clearfix profile-img-lg profile-img-center mt-n5 mb-3">
+                    <a href="#"><img class="profile-img rounded border border-white border-3" src="https://xsgames.co/randomusers/avatar.php?g=male" alt="Image of the profile owner"></a>
+                  </div>
+                  <!-- Profile info -->
+                  <h5 class="mb-0"> <a href="#">Robin Johnsen </a> </h5>
+                  <small>Web Developer at Developer Nation</small>
+                  <p class="mt-3">The Matrix is one hell of a source code, i like the challenge of working it</p>
+                  <!-- Followers, post and following stats -->
+                  <div class="hstack gap-2 gap-xl-3 justify-content-center">
+                    <div>
+                      <h6 class="mb-0">456</h6>
+                      <small>Post</small>
+                    </div>
+                    <div class="vr"></div>
+                    <div>
+                      <h6 class="mb-0">32.5K</h6>
+                      <small>Followers</small>
+                    </div>
+                    <div class="vr"></div>
+                    <div>
+                      <h6 class="mb-0">365</h6>
+                      <small>Following</small>
+                    </div>
+                  </div>
+                  <!-- Follower, post and following - end -->
+                </div>
+                <hr>
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Friends</button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                  <div class="offcanvas-header">
+                    <h5 id="offcanvasRightLabel">Friends List</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body">
+                    <div class="post post-story ">
+                      <a href="#"> <img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=male" alt=""> </a>
+                    </div>
+                    <div class="nav justify-content-center align-items-center">
+                      <h6 class="nav-item card-title mb-3"> <a href="#"> Albus Doredumble</a></h6>
+                    </div>
+                    <div class="post post-story ">
+                      <a href="#"> <img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=male" alt=""> </a>
+                    </div>
+                    <div class="nav justify-content-center align-items-center">
+                      <h6 class="nav-item card-title mb-3"> <a href="#"> The mighty Thor</a></h6>
+                    </div>
+                    <div class="post post-story ">
+                      <a href="#"> <img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=male" alt=""> </a>
+                    </div>
+                    <div class="nav justify-content-center align-items-center">
+                      <h6 class="nav-item card-title mb-3"> <a href="#"> Loki Odinsson</a></h6>
+                    </div>
+                    <div class="post post-story ">
+                      <a href="#"> <img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=female" alt=""> </a>
+                    </div>
+                    <div class="nav justify-content-center align-items-center">
+                      <h6 class="nav-item card-title mb-3"> <a href="#"> Wanda Sakarov</a></h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </div>
+<!--End of profile nav-->
+<!--content bellow profile header start-->
+    <div class="row mx-2">
+        <div class="col-md-">
+          <div class="card">
+            <div class="card-heading bg-lighter">
+              <span class="card-icon">
+              </span>
+              <span class="card-title"> Make a new post</span>
+            </div>
+            <div class="card-body pb5">
+              <div class="form-floating mt-4 mb-2">
+                <textarea class="form-control pe-4 bg-dim" id="floatingTextarea2" placeholder="write your thoughts here..."></textarea>
+                <label for="floatingTextarea2"></label>
+                <button type="submit" class="btn btn-primary mt-3">Send</button>
+              </div> 
+            </div>
+          </div>
+          <!--feed posts start-->
+          <div class="row g-4">
+            <!-- Card 1 START -->
+          <div class="card border-0">
+            <div class="card-header border-0 pb-0 bg-lighter">
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                  <div class="post post-story ">
+                    <a href="#"> <img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=male" alt=""> </a>
+                  </div>
+                  <div>
+                    <div class="nav">
+                      <h6 class="nav-item card-title mb-0"> <a href="#"> Albus Doredumble</a></h6>
+                    </div>
+                    <p class="mb-0 small">Front-End developer at Dev-Nation</p>
+                  </div>
+                </div>
+                <div class="dropdown">
+                  <a href="#" class="text-dtext btn btn-secondary-soft-hover py-1 px-2"  data-bs-toggle="dropdown">
+                    <i data-feather="chevrons-down"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#"> <i data-feather="bookmark"></i>Save post</a></li>
+                    <li><a class="dropdown-item" href="#"> <i data-feather="user-x"></i>Unfollow albus Doredumble </a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <p>I'm excited to get the honor of working with Matrix source code.</p>
+              <img class="card-img" src="/images/compare-fibre-tiSE_paTt0A-unsplash.jpg" alt="Post">
+              <ul class="nav nav-stack py-3 small">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Liked (789)</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Comments (45)</a>
+                </li>
+              </ul>
+              <div class="d-flex mb-3">
+                <div class="post post-xs me-2">
+                  <a href="#"> <img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=male" alt=""> </a>
+                </div>
+                <form class="w-100">
+                  <textarea  class="form-control pe-4 bg-dim" rows="1" placeholder="Add a comment..."></textarea>
+                </form>
+              </div>
+              <ul class="comment-wrap list-unstyled">
+                <li class="comment-item">
+                  <div class="d-flex position-relative">
+                    <div class="post post-xs">
+                      <a href="#"><img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=female" alt=""></a>
+                    </div>
+                    <div class="ms-2">
+                      <div class="bg-dark p-3 rounded">
+                        <div class="d-flex justify-content-between">
+                          <h6 class="mb-1"> <a href="#"> Alice wonderland </a></h6>
+                          <small class="ms-2">10hr</small>
+                        </div>
+                        <p class="small mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas aliquam architecto nulla iusto laudantium!</p>
+                      </div>
+                      <ul class="nav py-2 small">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#"> Like (6)</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#"> Reply</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#"> View 12 replies</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <ul class="comment-item-nested list-unstyled">
+                    <li class="comment-item">
+                      <div class="d-flex">
+                        <div class="post post-xs">
+                          <a href="#"><img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=female" alt=""></a>
+                        </div>
+                        <div class="ms-2">
+                          <div class="bg-dark p-3 rounded">
+                            <div class="d-flex justify-content-between">
+                              <h6 class="mb-1"> <a href="#"> Natasha Romanov </a> </h6>
+                              <small class="ms-2">5hr</small>
+                            </div>
+                            <p class="small mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, corrupti?</p>
+                          </div>
+                          <ul class="nav py-2 small">
+                            <li class="nav-item">
+                              <a class="nav-link" href="#"> Like (3)</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#"> Reply</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="comment-item">
+                      <div class="d-flex">
+                        <div class="post post-story post-xs">
+                          <a href="#"><img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=male" alt=""></a>
+                        </div>
+                        <div class="ms-2">
+                          <div class="bg-dark p-3 rounded">
+                            <div class="d-flex justify-content-between">
+                              <h6 class="mb-1"> <a href="#"> Loki Odinsson </a> </h6>
+                              <small class="ms-2">25min</small>
+                            </div>
+                            <p class="small mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, eos.</p>
+                          </div>
+                          <ul class="nav  py-2 small">
+                            <li class="nav-item">
+                              <a class="nav-link" href="#"> Like (39)</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#"> Reply</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <a href="#" role="button" class="btn btn-link btn-link-loader btn-sm text-secondary d-flex align-items-center mb-3 ms-5" data-bs-toggle="button" aria-pressed="true">
+                    <div class="dotsdots me-2">
+                      <span class="dotDot"></span>
+                      <span class="dotDot"></span>
+                      <span class="dotDot"></span>
+                    </div>
+                    Load more replies 
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--Card 1 END-->
+          <!-- Card 2 START -->
+          <div class="card border-0">
+            <div class="card-header border-0 pb-0 bg-lighter">
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                  <div class="post post-story ">
+                    <a href="#"> <img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=male" alt=""> </a>
+                  </div>
+                  <div>
+                    <div class="nav">
+                      <h6 class="nav-item card-title mb-0"> <a href="#"> Albus Doredumble</a></h6>
+                    </div>
+                    <p class="mb-0 small">Front-End developer at Dev-Nation</p>
+                  </div>
+                </div>
+                <div class="dropdown">
+                  <a href="#" class="text-secondary btn btn-secondary-soft-hover py-1 px-2" data-bs-toggle="dropdown">
+                    <i data-feather="chevrons-down"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#"> <i data-feather="bookmark pe-2"></i>Save post</a></li>
+                    <li><a class="dropdown-item" href="#"> <i data-feather="user-x pe-2"></i>Unfollow albus Doredumble </a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <p>Bootstrap is one solid thing to learn for sure. Head spinning</p>
+              <img class="card-img" src="/images/pankaj-patel-bYiw48KLbmw-unsplash.jpg" alt="Post">
+              <ul class="nav py-3 small">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Liked (1100)</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Comments (45)</a>
+                </li>
+              </ul>
+              <div class="d-flex mb-3">
+                <div class="post post-xs me-2">
+                  <a href="#"> <img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=male" alt=""> </a>
+                </div>
+                <form class="w-100">
+                  <textarea class="form-control pe-4 bg-light" rows="1" placeholder="Add a comment..."></textarea>
+                </form>
+              </div>
+              <ul class="comment-wrap list-unstyled">
+                <li class="comment-item">
+                  <div class="d-flex position-relative">
+                    <div class="post post-xs">
+                      <a href="#"><img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=female" alt=""></a>
+                    </div>
+                    <div class="ms-2">
+                      <div class="bg-dark p-3 rounded">
+                        <div class="d-flex justify-content-between">
+                          <h6 class="mb-1"> <a href="#"> Alice wonderland </a></h6>
+                          <small class="ms-2">10hr</small>
+                        </div>
+                        <p class="small mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas aliquam architecto nulla iusto laudantium!</p>
+                      </div>
+                      <ul class="nav py-2 small">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#"> Like (6)</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#"> Reply</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#"> View 12 replies</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <ul class="comment-item-nested list-unstyled">
+                    <li class="comment-item">
+                      <div class="d-flex">
+
+                        <div class="post post-xs">
+                          <a href="#"><img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=female" alt=""></a>
+                        </div>
+                        <div class="ms-2">
+                          <div class="bg-dark p-3 rounded">
+                            <div class="d-flex justify-content-between">
+                              <h6 class="mb-1"> <a href="#"> Natasha Romanov </a> </h6>
+                              <small class="ms-2">5hr</small>
+                            </div>
+                            <p class="small mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, corrupti?</p>
+                          </div>
+                          <ul class="nav py-2 small">
+                            <li class="nav-item">
+                              <a class="nav-link" href="#"> Like (3)</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#"> Reply</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="comment-item">
+                      <div class="d-flex">
+                        <div class="post post-story post-xs">
+                          <a href="#"><img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=male" alt=""></a>
+                        </div>
+                        <div class="ms-2">
+                          <div class="bg-dark p-3 rounded">
+                            <div class="d-flex justify-content-between">
+                              <h6 class="mb-1"> <a href="#"> Loki Odinsson </a> </h6>
+                              <small class="ms-2">25min</small>
+                            </div>
+                            <p class="small mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, eos.</p>
+                          </div>
+
+                          <ul class="nav py-2 small">
+                            <li class="nav-item">
+                              <a class="nav-link" href="#"> Like (39)</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#"> Reply</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <a href="#" role="button" class="btn btn-link btn-link-loader btn-sm text-secondary d-flex align-items-center mb-3 ms-5" data-bs-toggle="button" >
+                    <div class="dotsdots me-2">
+                      <span class="dotDot"></span>
+                      <span class="dotDot"></span>
+                      <span class="dotDot"></span>
+                    </div>
+                    Load more replies 
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--Card 2 END-->
+        </div>
+          </div>
+        </div>
+        </div>
+        <!--Content below profile header end-->
+      </div>
+      </main>
+      <!--Footer start-->
+      <footer class="footer  py-3 bg-light">
+        <div class="container">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/pages/profile.html">Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/pages/login.html">Login</a>
+                </li>
+              </ul>
+        </div>
+      </footer>
+      <!--Footer end-->
+      <!--Loaded scripts goes here-->
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>feather.replace()</script>
+    <!--End of loaded scripts-->
+</body>
+</html>

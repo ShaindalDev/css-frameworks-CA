@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dist/css/styles.css">
+    <script src="/node_modules/feather-icons/dist/feather.min.js"></script>
+    <title>Social Media app</title>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">
+            <img src="/images/placeholder.com-logo1.png" alt="" width="150" height="35" class="d-inline-block align-text-top">
+            
+          </a>
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/profile.html">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/pages/login.html">Login</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <main>
+        <div class="wrapper fadeInDown mb-5">
+          <div id="formContent">
+            <div class="fadeIn first ">
+              <i data-feather="user"></i>
+            </div>
+            <form action="/pages/profile.html">
+              <input type="email" id="login" class="fadeIn second form-control" required name="login" placeholder="Email">
+              <input type="password" id="password" class="fadeIn third form-control" required minlength="8" name="login" placeholder="Password">
+              <input type="submit" class="fadeIn fourth" value="Log In">
+            </form>
+            <div id="formFooter">
+              <a class="underlineHover" href="#">Forgot Password?</a>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer fixed-bottom mt-auto py-3 bg-light">
+        <div class="container">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/pages/profile.html">Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/pages/login.html">Login</a>
+                </li>
+              </ul>
+        </div>
+      </footer>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>feather.replace()</script>
+</body>
+</html>
