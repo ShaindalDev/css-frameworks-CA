@@ -1,16 +1,27 @@
 import { createPost } from "../posts/createPost2.mjs";
 
-export function setCreatePostListener() {
-    const form = document.getElementById("postForm");
+console.log("Loaded");
 
-    if (form) {
-        form.addEventListener("submit", (event) => {
-            event.preventDefault()
-            const form = event.target;
-            const formData = new FormData(form);
-            const post = Object.fromEntries(formData.entries())
+const form = document.getElementById("postForm");
 
-            createPost(post)
-        })
-    }
-}
+form.addEventListener("submit", (event) => {
+    event.preventDefault()
+    console.log("Clicked form");
+    const form = event.target;
+    const formData = new FormData(form);
+    const post = Object.fromEntries(formData.entries())
+
+    createPost(post)
+});
+
+    // const form = document.getElementById("postForm");
+
+    //     form.addEventListener("submit", (event) => {
+    //         event.preventDefault()
+    //         console.log("this was clicked");
+    //         const form = event.target;
+    //         const formData = new FormData(form);
+    //         const post = Object.fromEntries(formData.entries())
+
+    //         createPost(post)
+    //     })

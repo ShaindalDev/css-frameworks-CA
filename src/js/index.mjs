@@ -13,7 +13,6 @@ import { deletePost} from "./posts/deletePost.mjs";
 
 
 // search.setSearchPostListener();
-listeners.setCreatePostListener();
 
 
 posts.getAllPosts();
