@@ -70,7 +70,7 @@ export async function getUsersPosts() {
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item text-dtext" id="removePost" href="#" data-id="${filteredData.id}">Delete Post</a></li>
-                <li><a class="dropdown-item text-dtext" href="#">Update Post </a></li>
+                <li><a href="../pages/updatePost.html"class="dropdown-item text-dtext" href="#">Update Post </a></li>
               </ul>
             </div>
           </div>
