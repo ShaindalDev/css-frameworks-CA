@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0dc149767b.js" crossorigin="anonymous"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="../src/js/profile/index.mjs" type="module" defer></script>
+    <script src="../src/js/auth/check.js" defer></script>
+    <script src="../src/js/auth/logout.js" defer></script>
+    <link rel="stylesheet" href="/dist/css/styles.css">
+    <title>Social Verse | Profile</title>
+</head>
+<body>
+  <!--Top nav start-->
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img src="/images/placeholder.com-logo1.png" alt="" width="150" height="35" class="d-inline-block align-text-top">
+          </a>
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Profile</a>
+            </li>
+            <li class="nav-item" id="loginLink">
+              <a class="nav-link" href="./login/index.html">Login</a>
+            </li>
+            <li class="nav-item" id="logoutLink">
+              <button type="button" class="nav-link" id="logout">Logout</button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!--Top nav end-->
+      <!--Main content start-->
+      <main class="container my-3 bg-body rounded">
+        <!--profile nav with profile picture-->
+        <div id="profileWrapper">
+    <div class="profile-heading mt-4 mb-4 p-2 bg-lighter rounded border border-light">
+            <div class="h-50px" style="background-image:url(#); background-position: center; background-size: cover; background-repeat: no-repeat"></div>
+            <div class="card-body pt-0 border-0">
+              <div class="text-center">
+                <div class="text-center">
+                  <!-- profile image -->
+                  <a href="edit/index.html"><button class="btn btn-primary" type="button">Edit Profile</button></a>
+                </div>
+                <hr>
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Friends</button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                  <div class="offcanvas-header">
+                    <h5 id="offcanvasRightLabel">Friends List</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body">
+                    <div class="post post-story ">
+                      <a href="#"> <img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=male" alt=""> </a>
+                    </div>
+                    <div class="nav justify-content-center align-items-center">
+                      <h6 class="nav-item card-title mb-3"> <a href="#"> Albus Doredumble</a></h6>
+                    </div>
+                    <div class="post post-story ">
+                      <a href="#"> <img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=male" alt=""> </a>
+                    </div>
+                    <div class="nav justify-content-center align-items-center">
+                      <h6 class="nav-item card-title mb-3"> <a href="#"> The mighty Thor</a></h6>
+                    </div>
+                    <div class="post post-story ">
+                      <a href="#"> <img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=male" alt=""> </a>
+                    </div>
+                    <div class="nav justify-content-center align-items-center">
+                      <h6 class="nav-item card-title mb-3"> <a href="#"> Loki Odinsson</a></h6>
+                    </div>
+                    <div class="post post-story ">
+                      <a href="#"> <img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=female" alt=""> </a>
+                    </div>
+                    <div class="nav justify-content-center align-items-center">
+                      <h6 class="nav-item card-title mb-3"> <a href="#"> Wanda Sakarov</a></h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </div>
+  </div>
+<!--End of profile nav-->
+<!--content bellow profile header start-->
+    <div class="row mx-2">
+        <div class="col-md-">
+          <!--feed posts start-->
+          <div class="row g-4" id="usersPostWrapper"></div>
+          </div>
+        </div>
+        </div>
+        <!--Content below profile header end-->
+      </div>
+      </main>
+      <!--Footer start-->
+      <footer class="footer  py-3 bg-light">
+        <div class="container">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="login/index.html">Login</a>
+                </li>
+              </ul>
+        </div>
+      </footer>
+      <!--Footer end-->
+      <!--Loaded scripts goes here-->
+    
+    <!-- <script src="/src/js/index.mjs" type="module"></script> -->
+
+    <!-- <script src="../src/js/profile/getProfile.mjs" type="module"></script>
+    <script src="../src/js/profile/userposts.mjs" type="module"></script> -->
+    <!-- <script src="/src/js/posts/deletePost.mjs" type="module"></script> -->
+     
+    <!--End of loaded scripts-->
+</body>
+</html>

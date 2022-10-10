@@ -2,7 +2,7 @@
 import { authFetch } from "../api/authFetch.mjs";
 import { API_SOCIAL_URL } from "../api/constants.mjs";
 
-import { setUpdatePostListener } from "../handlers/updatepost.mjs";
+// import { setUpdatePostListener } from "../handlers/updatepost.mjs";
 import { deletePost } from "../posts/deletePost.mjs";
 // import { formatTimeChange } from "../components/formatTime.mjs";
 
@@ -69,8 +69,8 @@ export async function getUsersPosts() {
               <a href="#" class="text-dtext btn btn-secondary-soft-hover py-1 px-2"  data-bs-toggle="dropdown">
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item text-dtext" id="removePost" href="#" data-id="${filteredData.id}">Delete Post</a></li>
-                <li><a href="../pages/updatePost.html"class="dropdown-item text-dtext" href="#">Update Post </a></li>
+                <li><a class="dropdown-item text-dtext" deleteBtn href="#" data-id="${filteredData.id}">Delete Post</a></li>
+                <li><a href="../pages/updatePost.html"class="dropdown-item text-dtext updatePostBtn" href="#">Update Post </a></li>
               </ul>
             </div>
           </div>
@@ -183,14 +183,86 @@ export async function getUsersPosts() {
           </ul>
         </div>
       </div>`;
+
+          // Iterate over delete buttons.
+    document.querySelectorAll('.deleteBtn').forEach(item => {
+      item.addEventListener('click', event => {
+        destroyPost(item.dataset.id);
+      })
+    })
+
+    // Iterate over edit buttons.
+    document.querySelectorAll('.editPostBtn').forEach(item => {
+      item.addEventListener('click', event => {
+        editPost(item.dataset.id);
+      })
+    })
       });
 
+  /**
+   * Delete post functions.
+   */
+
+  async function destroyPost(id) {
+
+    const response = await fetch(API_SOCIAL_URL + "/posts/" + id, {
+      method: 'DELETE',
+      cache: 'no-cache',
+      body: JSON.stringify(formData)
+    });
+
+    return response.json();
+  }
+
+  /**
+   * Edit post functions.
+   */
+
+  async function editPost(id) {
+
+    const response = await fetch(`${API_SOCIAL_URL}/posts/` + id,
+      authOptions
+    );
+
+    const post = await response.json();
+
+    document.getElementById("id").value = post.id;
+    document.getElementById("title").value = post.title;
+    document.getElementById("body").value = post.body;
+    document.getElementById("tags").value = post.tags;
+    document.getElementById("media").value = post.media;
+
+  }
+
+  const updatePostBtn = document.getElementById("updatePostBtn");
+
+  updatePostBtn.addEventListener('click', event => {
+    const postId = document.getElementById("id").value;
+    updatePost(postId);
+  })
+
+  async function updatePost() {
+
+    const form = document.getElementById('updatePostForm');
+    const formData = new FormData(form);
+
+    const response = await fetch(API_SOCIAL_URL + "/posts/" + id, {
+      method: 'PUT',
+      cache: 'no-cache',
+      body: JSON.stringify(formData)
+    });
+
+    return response.json();
+    
+  }
    if (!response.ok) {
         throw new Error("HTTP error! status: ${response.status}");
        }
       console.log("This is all of your posts", filteredData);
   
   console.log(usersPostContainer);
+
+  
 }
 
 getUsersPosts();

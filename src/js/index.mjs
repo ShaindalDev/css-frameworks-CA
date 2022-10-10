@@ -17,7 +17,7 @@ import { deletePost} from "./posts/deletePost.mjs";
 
 posts.getAllPosts();
 
-// deletePost(3638)
+// deletePost(4426)
 
 // createPost({
 //     title: "Sleepless nights?",

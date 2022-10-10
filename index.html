@@ -12,7 +12,7 @@
     <script src="./src/js/auth/check.js" defer></script>
     <script src="./src/js/auth/logout.js" defer></script>
     <script src="./src/js/index.mjs" type="module" defer></script>
-    <script src="./src/js/handlers/createPost.mjs" type="module" defer></script>
+    <script src="./src/js/handlers/createPost.mjs" type="module"></script>
     <link rel="stylesheet" href="/dist/css/styles.css" />
     <title>Social Verse | Home</title>
   </head>
@@ -47,7 +47,7 @@
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/pages/profile.html">Profile</a>
+            <a class="nav-link" href="/profile/index.html">Profile</a>
           </li>
           <li class="nav-item" id="loginLink">
             <a class="nav-link" href="/pages/login.html">Login</a>
@@ -58,69 +58,12 @@
         </ul>
       </div>
     </nav>
-          <!--Start of post editing-->
-          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasPost" aria-labelledby="offcanvasPostLabel">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasPostLabel">Updating your post</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <div>
-                <h4>TEst</h4>
-        <form id="postForm">
-          <div class="mb-3">
-            <input
-              type="text"
-              class="form-control bg-dim text-muted"
-              id="postTitle"
-              name="postTitle"
-              placeholder=""
-              required
-            />
-            <label for="postTitle" class="col-form-label"></label>
-          </div>
-          <div class="form-floating mb-2">
-            <textarea type="text"
-              class="form-control bg-dim text-muted"
-              placeholder="What's your thoughts today"
-              id="postContent"
-              style="height: 100px"
-              required
-            ></textarea>
-            <label for="postContent"></label>
-          </div>
-          <div class="form-floating mb-2">
-            <input type="text"
-              class="form-control bg-dim text-dtext"
-              placeholder="i.e blog, development, opinion.."
-              id="postTags"
-            >
-            <label for="postTags"></label>
-          </div>
-          <div class="form-floating mb-2">
-            <input type="url"
-              class="form-control bg-dim text-muted"
-              placeholder="media url"
-              id="postMedia"
-            >
-            <label for="postMedia"></label>
-          </div>
-          <button
-            class="btn btn-primary mt-2 mb-3"
-            id="postButton-submit"
-          >
-            Update Post
-          </button>
-        </form>
-              </div>
-
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </div>
     <main class="container mt-4 shadow-sm p-3 mb-5 bg-body rounded">
+      <!--Create post HTML goes here-->
       <div class="container border-light bg-lighter" id="createPost">
         <h1>New post</h1>
         <form id="postForm">
@@ -128,8 +71,8 @@
             <input
               type="text"
               class="form-control bg-dim text-muted"
-              id="postTitle"
-              name="postTitle"
+              id="title"
+              name="title"
               placeholder="Title for your post" required
             />
             <label for="postTitle" class="col-form-label"></label>
@@ -138,28 +81,29 @@
             <textarea
               class="form-control bg-dim text-muted"
               placeholder="What's your thoughts today"
-              id="postContent"
+              id="body"
+              name="body"
               style="height: 100px" required maxlength="350"
             ></textarea>
-            <label for="postContent">What's your thoughts today?</label>
+            <label for="body">What's your thoughts today?</label>
           </div>
           <div class="form-floating mb-2">
             <input
             type="text"
               class="form-control bg-dim text-dtext"
               placeholder="i.e blog, development, opinion.."
-              id="postTags"
+              id="tags"
             >
-            <label for="postTags">Your tags here</label>
+            <label for="tags">Your tags here</label>
           </div>
           <div class="form-floating mb-2">
             <input
             type="url"
               class="form-control bg-dim text-muted"
               placeholder="media url"
-              id="postMedia"
+              id="media"
             >
-            <label for="postMedia">enter media url here</label>
+            <label for="media">enter media url here</label>
           </div>
           <button
             class="btn btn-primary mt-2 mb-3"
@@ -178,8 +122,7 @@
           <li><a class="dropdown-item" href="#">Something else here</a></li>
         </ul>
       </div>
-      <div class="postWrapper row mb-2 mt-4 pt-4">
-
+      <div id="postContainer" class="row mb-2 mt-4 pt-4">
         <!-- <div class="postContainer col-md-6"></div> -->
       </div>
     </main>
@@ -200,5 +143,64 @@
         </ul>
       </div>
     </footer>
+    <!--All ofcanvas sections going here-->
+              <!--Start of post editing-->
+              <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasPost" aria-labelledby="offcanvasPostLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasPostLabel">Updating your post</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <div>
+                    <h4>TEst</h4>
+            <form id="updatePostForm">
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control bg-dim text-muted"
+                  id="postTitle"
+                  name="postTitle"
+                  placeholder=""
+                  required
+                />
+                <label for="postTitle" class="col-form-label"></label>
+              </div>
+              <div class="form-floating mb-2">
+                <textarea type="text"
+                  class="form-control bg-dim text-muted"
+                  placeholder="What's your thoughts today"
+                  id="postContent"
+                  style="height: 100px"
+                  required
+                ></textarea>
+                <label for="postContent"></label>
+              </div>
+              <div class="form-floating mb-2">
+                <input type="text"
+                  class="form-control bg-dim text-dtext"
+                  placeholder="i.e blog, development, opinion.."
+                  id="postTags"
+                >
+                <label for="postTags"></label>
+              </div>
+              <div class="form-floating mb-2">
+                <input type="url"
+                  class="form-control bg-dim text-muted"
+                  placeholder="media url"
+                  id="postMedia"
+                >
+                <label for="postMedia"></label>
+              </div>
+              <button
+                class="btn btn-primary mt-2 mb-3"
+                id="postButton-submit"
+              >
+                Update Post
+              </button>
+            </form>
+                  </div>
+    
+                  </div>
+                </div>
   </body>
 </html>

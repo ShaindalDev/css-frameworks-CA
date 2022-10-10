@@ -49,16 +49,6 @@ function createHtml(details) {
           <p class="mb-0 small">${details.title}</p>
         </div>
       </div>
-      <button class="btn btn-primary tex-dtext" id="removePost"data-id"${details.id}">Delete Post</button>
-      <div class="dropdown">
-       <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button> <i class="bi bi-chevron-down"></i>
-        <a href="#" class="text-dtext btn btn-secondary-soft-hover py-1 px-2"  data-bs-toggle="dropdown">
-        </a>
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item text-dtext"  href="#" data-id="${details.id}">Delete Post</a></li>
-          <li><a class="dropdown-item text-dtext" href="#">Update Post </a></li>
-        </ul>
-      </div>
     </div>
   </div>
   <div class="card-body">
