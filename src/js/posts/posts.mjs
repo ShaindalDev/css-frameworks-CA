@@ -1,6 +1,21 @@
-
 import { API_SOCIAL_URL, token } from "../api/constants.mjs";
 
+const searchResult = document.getElementById('searchResultFeed');
+const searchBar = document.getElementById("searchBar");
+let posts = [];
+
+searchBar.addEventListener("keyup", (e) => {
+  const searchString = e.target.value.toLowerCase();
+
+  const filteredPostsData = posts.filter((filtered) => {
+    return (
+      filtered.author.name.toLowerCase().includes(searchString) ||
+      filtered.title.toLowerCase().includes(searchString)
+    );
+  });
+  console.log(filteredPostsData);
+  displaySearchedPosts(filteredPostsData);
+});
 const authOptions = {
   headers: {
     "Content-type": `application/json; charset=UTF-8`,
@@ -9,21 +24,19 @@ const authOptions = {
 };
 
 export async function getAllPosts() {
-
   const response = await fetch(
     `${API_SOCIAL_URL}/posts/?sort=created&sortOrder=desc&_author=true&_reactions=true&_comments=true`,
     authOptions
   );
 
-  const posts = await response.json();
-  console.log(posts)
-  
+  posts = await response.json();
+  // console.log(posts);
+
   const postContainer = document.getElementById("postContainer");
 
   postContainer.innerHTML = "";
 
   posts.forEach(function (post) {
-
     postContainer.innerHTML += `
     
       <div class="col-md-6">
@@ -113,33 +126,33 @@ export async function getAllPosts() {
     `;
 
     // Iterate over delete buttons.
-    document.querySelectorAll('.deleteBtn').forEach(item => {
-      item.addEventListener('click', event => {
+    document.querySelectorAll(".deleteBtn").forEach((item) => {
+      item.addEventListener("click", (event) => {
         destroyPost(item.dataset.id);
-      })
-    })
+      });
+    });
 
     // Iterate over edit buttons.
-    document.querySelectorAll('.editPostBtn').forEach(item => {
-      item.addEventListener('click', event => {
+    document.querySelectorAll(".editPostBtn").forEach((item) => {
+      item.addEventListener("click", (event) => {
         editPost(item.dataset.id);
-      })
-    })
+      });
+    });
 
   });
+
+  
 
   /**
    * Delete post functions.
    */
 
   async function destroyPost(id) {
-
     // const response = await fetch(API_SOCIAL_URL + "/posts/" + id, {
     //   method: 'DELETE',
     //   cache: 'no-cache',
     //   body: JSON.stringify(formData)
     // });
-
     // return response.json();
   }
 
@@ -148,10 +161,7 @@ export async function getAllPosts() {
    */
 
   async function editPost(id) {
-
-    const response = await fetch(`${API_SOCIAL_URL}/posts/` + id,
-      authOptions
-    );
+    const response = await fetch(`${API_SOCIAL_URL}/posts/` + id, authOptions);
 
     const post = await response.json();
 
@@ -160,7 +170,6 @@ export async function getAllPosts() {
     document.getElementById("body").value = post.body;
     document.getElementById("tags").value = post.tags;
     document.getElementById("media").value = post.media;
-
   }
 
   // const updatePostBtn = document.getElementById("updatePostBtn");
@@ -171,8 +180,7 @@ export async function getAllPosts() {
   // })
 
   async function updatePost() {
-
-    const form = document.getElementById('updatePostForm');
+    const form = document.getElementById("updatePostForm");
     const formData = new FormData(form);
 
     // const response = await fetch(API_SOCIAL_URL + "/posts/" + id, {
@@ -182,13 +190,49 @@ export async function getAllPosts() {
     // });
 
     // return response.json();
-    
   }
 
   if (!response.ok) {
     throw new Error("HTTP error! status: ${response.status}");
   }
+}
 
+const displaySearchedPosts = (posts) => {
+  const htmlString = posts.map((post) => {
+    return `<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow p-2 h-md-250 position-relative">
+
+    <div class="d-flex justify-content-between">
+
+      <a href="../pages/post.html?id=${post.id}" class="btn btn-primary">View Post</a>
+
+    </div>
+
+    <div class="col p-4 d-flex flex-column position-static">
+      <strong class="d-inline-block mb-2 text-primary">${post.author.name}</strong>
+      <h3 class="mb-0">${post.title}</h3>
+      <div class="mb-1 text-dark">Created: ${post.created}</div>
+      <p class="card-text mb-auto">${post.body}</p>
+      <div class="media">
+        <img class="mb-3 mw-100" role="img" src="${post.media}">
+      </div>
+      <div class="mb-1 text-dark">Tags: ${post.tags} </div>
+    </div>
+
+    <ul class="nav nav-stack py-3 small">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Likes: ${post._count.reactions} <i class="fa-solid fa-heart"></i> </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Comments ${post._count.comments}</a>
+      </li>
+    </ul>
+    <div class="d-flex mb-3">
+      <div class="post post-xs me-2">
+        <a href="#"> <img class="post-img rounded-circle" src="${post.owner}" alt=""> </a>
+      </div>
+  </div>`;
+  })
+  .join('');
+  searchResult.innerHTML = htmlString;
 };
-
 getAllPosts();

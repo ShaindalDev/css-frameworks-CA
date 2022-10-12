@@ -13,7 +13,6 @@
     <script src="./src/js/auth/logout.js" defer></script>
     <script src="./src/js/index.mjs" type="module" defer></script>
     <script src="./src/js/handlers/createPost.mjs" type="module"></script>
-    <script src="./src/js/components/searchfunction2.mjs" type="module"></script>
     <link rel="stylesheet" href="/dist/css/styles.css" />
     <title>Social Verse | Home</title>
   </head>
@@ -40,7 +39,6 @@
             aria-label="Search"
           />
         </form>
-        <div id="searchResultFeed" class="pb-3 pt-2"></div>
         <ul class="nav nav-pills">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="index.html"
@@ -64,6 +62,7 @@
       </div>
     </div>
     <main class="container mt-4 shadow-sm p-3 mb-5 bg-body rounded">
+      
       <!--Create post HTML goes here-->
       <div class="container border-light bg-lighter" id="createPost">
         <h1>New post</h1>
@@ -123,6 +122,7 @@
           <li><a class="dropdown-item" href="#">Something else here</a></li>
         </ul>
       </div>
+      <div id="searchResultFeed" class="pb-3 pt-2"></div>
       <div id="postContainer" class="row mb-2 mt-4 pt-4">
         <!-- <div class="postContainer col-md-6"></div> -->
       </div>
