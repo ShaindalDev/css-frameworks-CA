@@ -22,7 +22,7 @@ const usersPostContainer = document.getElementById("usersPostWrapper");
  * @param {string} token This is the token that has been stored when login function was run
  */
 export async function getUsersPosts() {
-  
+ 
     const response = await fetch(
       `${API_SOCIAL_URL}${postsURL}/?sort=created&sortOrder=desc&_author=true&_comments=true&_reactions=true`,
       {
@@ -39,12 +39,13 @@ export async function getUsersPosts() {
 /**
  * Filter function, to filter all the data that comes from the API, down to a single users data.
  */
- 
       const filteredData = data.filter((filtered) => {
         return filtered.author.name == userName;
       });
+      
       usersPostContainer.innerHTML = "";
       filteredData.forEach((filteredData) => {
+        
 
         // setting date and time constant for change info from API
         // const timeCreated = formatTimeChange(el.created);
@@ -185,76 +186,76 @@ export async function getUsersPosts() {
       </div>`;
 
           // Iterate over delete buttons.
-    document.querySelectorAll('.deleteBtn').forEach(item => {
-      item.addEventListener('click', event => {
-        destroyPost(item.dataset.id);
-      })
-    })
+    // document.querySelectorAll('.deleteBtn').forEach(item => {
+    //   item.addEventListener('click', event => {
+    //     destroyPost(item.dataset.id);
+    //   })
+    // })
 
-    // Iterate over edit buttons.
-    document.querySelectorAll('.editPostBtn').forEach(item => {
-      item.addEventListener('click', event => {
-        editPost(item.dataset.id);
-      })
-    })
+    // // Iterate over edit buttons.
+    // document.querySelectorAll('.editPostBtn').forEach(item => {
+    //   item.addEventListener('click', event => {
+    //     editPost(item.dataset.id);
+    //   })
+    // })
       });
 
   /**
    * Delete post functions.
    */
 
-  async function destroyPost(id) {
+  // async function destroyPost(id) {
 
-    const response = await fetch(API_SOCIAL_URL + "/posts/" + id, {
-      method: 'DELETE',
-      cache: 'no-cache',
-      body: JSON.stringify(formData)
-    });
+  //   const response = await fetch(API_SOCIAL_URL + "/posts/" + id, {
+  //     method: 'DELETE',
+  //     cache: 'no-cache',
+  //     body: JSON.stringify(formData)
+  //   });
 
-    return response.json();
-  }
+  //   return response.json();
+  // }
 
   /**
    * Edit post functions.
    */
 
-  async function editPost(id) {
+  // async function editPost(id) {
 
-    const response = await fetch(`${API_SOCIAL_URL}/posts/` + id,
-      authOptions
-    );
+  //   const response = await fetch(`${API_SOCIAL_URL}/posts/` + id,
+  //     authOptions
+  //   );
 
-    const post = await response.json();
+  //   const post = await response.json();
 
-    document.getElementById("id").value = post.id;
-    document.getElementById("title").value = post.title;
-    document.getElementById("body").value = post.body;
-    document.getElementById("tags").value = post.tags;
-    document.getElementById("media").value = post.media;
+  //   document.getElementById("id").value = post.id;
+  //   document.getElementById("title").value = post.title;
+  //   document.getElementById("body").value = post.body;
+  //   document.getElementById("tags").value = post.tags;
+  //   document.getElementById("media").value = post.media;
 
-  }
+  // }
 
-  const updatePostBtn = document.getElementById("updatePostBtn");
+  // const updatePostBtn = document.getElementById("updatePostBtn");
 
-  updatePostBtn.addEventListener('click', event => {
-    const postId = document.getElementById("id").value;
-    updatePost(postId);
-  })
+  // updatePostBtn.addEventListener('click', event => {
+  //   const postId = document.getElementById("id").value;
+  //   updatePost(postId);
+  // })
 
-  async function updatePost() {
+  // async function updatePost() {
 
-    const form = document.getElementById('updatePostForm');
-    const formData = new FormData(form);
+  //   const form = document.getElementById('updatePostForm');
+  //   const formData = new FormData(form);
 
-    const response = await fetch(API_SOCIAL_URL + "/posts/" + id, {
-      method: 'PUT',
-      cache: 'no-cache',
-      body: JSON.stringify(formData)
-    });
+  //   const response = await fetch(API_SOCIAL_URL + "/posts/" + id, {
+  //     method: 'PUT',
+  //     cache: 'no-cache',
+  //     body: JSON.stringify(formData)
+  //   });
 
-    return response.json();
+  //   return response.json();
     
-  }
+  // }
    if (!response.ok) {
         throw new Error("HTTP error! status: ${response.status}");
        }

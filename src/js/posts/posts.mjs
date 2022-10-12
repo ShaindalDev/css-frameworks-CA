@@ -16,6 +16,7 @@ export async function getAllPosts() {
   );
 
   const posts = await response.json();
+  console.log(posts)
   
   const postContainer = document.getElementById("postContainer");
 
