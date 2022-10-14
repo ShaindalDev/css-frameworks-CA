@@ -125,7 +125,7 @@ function createHtml(details) {
           <li class="comment-item">
             <div class="d-flex">
               <div class="post post-story post-xs">
-                <a href="#"><img class="post-img rounded-circle" src="https:xsgames.co/randomusers/avatar.php?g=male" alt=""></a>
+                <a href="#"><img class="post-img rounded-circle" src="${details.avatar}" alt=""></a>
               </div>
               <div class="ms-2">
                 <div class="bg-dark p-3 rounded">

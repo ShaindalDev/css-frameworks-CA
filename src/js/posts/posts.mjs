@@ -2,8 +2,13 @@ import { API_SOCIAL_URL, token } from "../api/constants.mjs";
 
 const searchResult = document.getElementById('searchResultFeed');
 const searchBar = document.getElementById("searchBar");
+const fBtn = document.querySelectorAll('.fBtn');
 let posts = [];
 
+
+/**
+ * This is the event listener for the search bar, this will is what registers the keypress and filters trough posts to find the match characters used in the searchbar
+ */
 searchBar.addEventListener("keyup", (e) => {
   const searchString = e.target.value.toLowerCase();
 
@@ -125,73 +130,8 @@ export async function getAllPosts() {
       </div>
     `;
 
-    // Iterate over delete buttons.
-    document.querySelectorAll(".deleteBtn").forEach((item) => {
-      item.addEventListener("click", (event) => {
-        destroyPost(item.dataset.id);
-      });
-    });
-
-    // Iterate over edit buttons.
-    document.querySelectorAll(".editPostBtn").forEach((item) => {
-      item.addEventListener("click", (event) => {
-        editPost(item.dataset.id);
-      });
-    });
-
   });
-
   
-
-  /**
-   * Delete post functions.
-   */
-
-  async function destroyPost(id) {
-    // const response = await fetch(API_SOCIAL_URL + "/posts/" + id, {
-    //   method: 'DELETE',
-    //   cache: 'no-cache',
-    //   body: JSON.stringify(formData)
-    // });
-    // return response.json();
-  }
-
-  /**
-   * Edit post functions.
-   */
-
-  async function editPost(id) {
-    const response = await fetch(`${API_SOCIAL_URL}/posts/` + id, authOptions);
-
-    const post = await response.json();
-
-    document.getElementById("id").value = post.id;
-    document.getElementById("title").value = post.title;
-    document.getElementById("body").value = post.body;
-    document.getElementById("tags").value = post.tags;
-    document.getElementById("media").value = post.media;
-  }
-
-  // const updatePostBtn = document.getElementById("updatePostBtn");
-
-  // updatePostBtn.addEventListener('click', event => {
-  //   const postId = document.getElementById("id").value;
-  //   updatePost(postId);
-  // })
-
-  async function updatePost() {
-    const form = document.getElementById("updatePostForm");
-    const formData = new FormData(form);
-
-    // const response = await fetch(API_SOCIAL_URL + "/posts/" + id, {
-    //   method: 'PUT',
-    //   cache: 'no-cache',
-    //   body: JSON.stringify(formData)
-    // });
-
-    // return response.json();
-  }
-
   if (!response.ok) {
     throw new Error("HTTP error! status: ${response.status}");
   }

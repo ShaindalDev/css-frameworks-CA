@@ -114,14 +114,37 @@
         </form>
       </div>
       <hr>
-      <div class="dropdown" id="filteringPosts">
+      <div class=" p-3 rounded col-lg-8">
+        <div class="hstack gap-3 p-3 pb-0">
+            <h6 class="pb-2 mb-0">Recent posts
+            </h6>
+            <div class="btn-group ms-auto d-inline-block">
+                <button class="btn btn-grey-ish btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Filter
+                </button>
+                <ul class="dropdown-menu text-center">
+                    <li class="dropdown-item" href="#" id="filter-pictures">With pictures</li>
+                    <li class="dropdown-item" href="#" id="filter-tags">With tags</li>
+                    <li class="dropdown-item" href="#" id="filter-comments">With comments</li>
+                </ul>
+            </div>
+        </div>
+        <!-- <div class="row text-muted p-3 m-2 card index-post-box">
+            <div class="spinner-border text-info mx-auto" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div> -->
+    </div>
+      <!-- <div class="dropdown" id="filteringPosts">
         <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Filter</a>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Newest</a></li>
-          <li><a class="dropdown-item" href="#">My posts</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><a class="dropdown-item fBtn active" href="#" data-filter="all">All</a></li>
+          <li><a class="dropdown-item fBtn" href="#" data-filter="newest">Newest</a></li>
+          <li><a class="dropdown-item fBtn" href="#" data-filter="My posts">My posts</a></li>
+          <li><a class="dropdown-item fBtn" href="#" data-filter="">Something else here</a></li>
         </ul>
-      </div>
+      </div> -->
       <div id="searchResultFeed" class="pb-3 pt-2"></div>
       <div id="postContainer" class="row mb-2 mt-4 pt-4">
         <!-- <div class="postContainer col-md-6"></div> -->

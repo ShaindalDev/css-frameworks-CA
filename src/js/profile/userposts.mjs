@@ -70,7 +70,7 @@ export async function getUsersPosts() {
               <a href="#" class="text-dtext btn btn-secondary-soft-hover py-1 px-2"  data-bs-toggle="dropdown">
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item text-dtext" deleteBtn href="#" data-id="${filteredData.id}">Delete Post</a></li>
+                <li><a class="dropdown-item text-dtext deleteBtn" href="#" data-id="${filteredData.id}">Delete Post ${filteredData.id}</a></li>
                 <li><a href="../pages/updatePost.html"class="dropdown-item text-dtext updatePostBtn" href="#">Update Post </a></li>
               </ul>
             </div>
@@ -186,34 +186,33 @@ export async function getUsersPosts() {
       </div>`;
 
           // Iterate over delete buttons.
-    // document.querySelectorAll('.deleteBtn').forEach(item => {
-    //   item.addEventListener('click', event => {
-    //     destroyPost(item.dataset.id);
-    //   })
-    // })
+    document.querySelectorAll('.deleteBtn').forEach(item => {
+      item.addEventListener('click', event => {
+        destroyPost(item.dataset.id);
+      })
+    })
 
     // // Iterate over edit buttons.
-    // document.querySelectorAll('.editPostBtn').forEach(item => {
-    //   item.addEventListener('click', event => {
-    //     editPost(item.dataset.id);
-    //   })
-    // })
+    document.querySelectorAll('.editPostBtn').forEach(item => {
+      item.addEventListener('click', event => {
+        editPost(item.dataset.id);
+      })
+    })
       });
 
   /**
    * Delete post functions.
    */
 
-  // async function destroyPost(id) {
+  async function destroyPost(id) {
 
-  //   const response = await fetch(API_SOCIAL_URL + "/posts/" + id, {
-  //     method: 'DELETE',
-  //     cache: 'no-cache',
-  //     body: JSON.stringify(formData)
-  //   });
+    const response = await authFetch(API_SOCIAL_URL + "/posts/" + id, {
+      method: 'DELETE',
+      cache: 'no-cache',
+    });
 
-  //   return response.json();
-  // }
+    return response.json();
+  }
 
   /**
    * Edit post functions.

@@ -7,7 +7,7 @@ import * as search from "./components/searchFunction.mjs";
 
 import { createPost }  from "./posts/createPost2.mjs";
 
-import { updateUsersPost } from "./profile/updateUsersPost.mjs";
+// import { updateUsersPost } from "./profile/updateUsersPost.mjs";
 
 import { deletePost} from "./posts/deletePost.mjs";
 
