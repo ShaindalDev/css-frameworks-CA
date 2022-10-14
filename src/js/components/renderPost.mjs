@@ -37,5 +37,4 @@ export function renderPosts(postsToRender) {
               <a href="#"> <img class="post-img rounded-circle" src="${post.owner}" alt=""> </a>
             </div>`;
     });
-
-}
+};

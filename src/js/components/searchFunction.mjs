@@ -1,6 +1,4 @@
-import { API_SOCIAL_URL } from "../api/constants.mjs";
 import { renderPosts } from "./renderPost.mjs";
-
 
 export function searchPosts(post) {
     const searchBar = document.querySelector('#searchBar');
@@ -16,8 +14,8 @@ export function searchPosts(post) {
                 return true;
             }
         });
-
-        console.log(filteredPosts);
-    }
-    renderPosts(filteredPosts);
-}
+        renderPosts(filteredPosts);
+        // console.log(filteredPosts);
+    };
+    
+};
