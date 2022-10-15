@@ -15,7 +15,7 @@ const method = "put";
 
   async function editPost(id) {
 
-    const response = await fetch(`${API_SOCIAL_URL}/posts/` + id,
+    const response = await authFetch(`${API_SOCIAL_URL}/posts/` + id,
       authOptions
     );
 

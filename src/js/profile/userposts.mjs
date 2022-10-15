@@ -24,7 +24,7 @@ const usersPostContainer = document.getElementById("usersPostWrapper");
 export async function getUsersPosts() {
  
     const response = await fetch(
-      `${API_SOCIAL_URL}${postsURL}/?sort=created&sortOrder=desc&_author=true&_comments=true&_reactions=true`,
+      `${API_SOCIAL_URL}${postsURL}/?sort=owner&sortOrder=desc&_author=true&_comments=true&_reactions=true&limit=100&offset=200`,
       {
         method: "get",
         headers: {
@@ -71,7 +71,7 @@ export async function getUsersPosts() {
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item text-dtext deleteBtn" href="#" data-id="${filteredData.id}">Delete Post ${filteredData.id}</a></li>
-                <li><a href="../pages/updatePost.html"class="dropdown-item text-dtext updatePostBtn" href="#">Update Post </a></li>
+                <li><a href="#"class="dropdown-item text-dtext btn updatePostBtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasPost" aria-controls="offcanvas">Update Post </a></li>
               </ul>
             </div>
           </div>
@@ -218,43 +218,44 @@ export async function getUsersPosts() {
    * Edit post functions.
    */
 
-  // async function editPost(id) {
+  async function editPost(id) {
 
-  //   const response = await fetch(`${API_SOCIAL_URL}/posts/` + id,
-  //     authOptions
-  //   );
+    const response = await fetch(`${API_SOCIAL_URL}/posts/` + id,
+      authOptions
+    );
 
-  //   const post = await response.json();
+    const post = await response.json();
 
-  //   document.getElementById("id").value = post.id;
-  //   document.getElementById("title").value = post.title;
-  //   document.getElementById("body").value = post.body;
-  //   document.getElementById("tags").value = post.tags;
-  //   document.getElementById("media").value = post.media;
+    document.getElementById("id").value = post.id;
+    document.getElementById("title").value = post.title;
+    document.getElementById("body").value = post.body;
+    document.getElementById("tags").value = post.tags;
+    document.getElementById("media").value = post.media;
 
-  // }
+  }
 
-  // const updatePostBtn = document.getElementById("updatePostBtn");
+  const updatePostBtn = document.getElementById("updatePostBtn");
 
-  // updatePostBtn.addEventListener('click', event => {
-  //   const postId = document.getElementById("id").value;
-  //   updatePost(postId);
-  // })
+  updatePostBtn.addEventListener('click', event => {
+    console.log("this was clicked");
+    const postId = document.getElementById("id").value;
+    updatePost(postId);
+  })
 
-  // async function updatePost() {
+  async function updatePost() {
 
-  //   const form = document.getElementById('updatePostForm');
-  //   const formData = new FormData(form);
+    const form = document.getElementById('updatePostForm');
+    const formData = new FormData(form);
 
-  //   const response = await fetch(API_SOCIAL_URL + "/posts/" + id, {
-  //     method: 'PUT',
-  //     cache: 'no-cache',
-  //     body: JSON.stringify(formData)
-  //   });
+    const response = await fetch(API_SOCIAL_URL + "/posts/" + id, {
+      method: 'PUT',
+      cache: 'no-cache',
+      body: JSON.stringify(formData)
+    });
 
-  //   return response.json();
+    return response.json();
     
-  // }
+  }
    if (!response.ok) {
         throw new Error("HTTP error! status: ${response.status}");
        }
