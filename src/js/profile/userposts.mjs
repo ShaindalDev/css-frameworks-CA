@@ -1,6 +1,7 @@
 //importing from other JS files
 import { authFetch } from "../api/authFetch.mjs";
 import { API_SOCIAL_URL } from "../api/constants.mjs";
+// import { setUpdatePostListener } from "../handlers/updatePostHandler.mjs";
 
 // global const used in the file
 
@@ -209,9 +210,12 @@ export async function getUsersPosts() {
     return response.json();
   }
 
+  
   /**
-   * Edit post functions.
+   * This is the Edit Post function with eventListener. This is run with the updatePost function below
+   * @param {*} id 
    */
+
 
   async function editPost(id) {
     const response = await fetch(`${API_SOCIAL_URL}/posts/` + id,
@@ -227,9 +231,6 @@ export async function getUsersPosts() {
 
     }
     
-
-  
-
     const updatePostBtn = document.getElementById("updatePostBtn");
 
   updatePostBtn.addEventListener('click', event => {
@@ -263,6 +264,7 @@ export async function getUsersPosts() {
 }
 
 getUsersPosts();
+// setUpdatePostListener()
 
 
 // ######## TESTING SECTION FOR THIS FILE ########
