@@ -5,19 +5,15 @@
 
 // import * as listeners from "./handlers/login.mjs";
 // import * as posts from "./api/posts/index.mjs";
+// import { updatePostListener } from "./handlers/updatePostHandler.mjs";
 
 // export default function router () {
 // const path = location.pathname;
 
 // switch (path) {
-//     case "/pages/index.html/":
-//     listeners.setCreatePostListener();
+//     case "/pages/updatePost.html/":
+//     updatePostListener();
 //     return;
-    // case "/post/edit/":
-    // listeners.setUpdatePostListener();
-    // return;
-    // case "/profile/edit/":
-    // listeners.setUpdateProfileListener();
-    // return;
+
 // }
 // }

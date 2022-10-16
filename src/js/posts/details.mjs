@@ -27,6 +27,82 @@ export async function getDetails() {
   if (createHtml) {
   
   }
+
+  // Iterate over delete buttons.
+  document.querySelectorAll('.deleteBtn').forEach(item => {
+    item.addEventListener('click', event => {
+      destroyPost(item.dataset.id);
+    })
+  })
+
+  // // Iterate over edit buttons.
+  document.querySelectorAll('.editPostBtn').forEach(item => {
+    item.addEventListener('click', event => {
+      editPost(item.dataset.id);
+    })
+  })
+    ;
+
+/**
+ * Delete post functions.
+ */
+
+async function destroyPost(id) {
+
+  const response = await authFetch(API_SOCIAL_URL + "/posts/" + id, {
+    method: 'DELETE',
+    cache: 'no-cache',
+  });
+
+  return response.json();
+}
+
+
+/**
+ * This is the Edit Post function with eventListener. This is run with the updatePost function below
+ * @param {*} id 
+ */
+
+
+async function editPost(id) {
+  const response = await fetch(`${API_SOCIAL_URL}/posts/` + id,
+    authOptions
+  );
+
+  const post = await response.json();
+  document.getElementById("id").value = post.id;
+  document.getElementById("title").value = post.title;
+  document.getElementById("body").value = post.body;
+  document.getElementById("tags").value = post.tags;
+  document.getElementById("media").value = post.media;
+
+  }
+  
+  const updatePostBtn = document.getElementById("updatePostBtn");
+
+updatePostBtn.addEventListener('click', event => {
+  event.preventDefault();
+  console.log("this was clicked");
+  const postId = document.getElementById("id").value;
+  updatePost(postId);
+})
+
+async function updatePost(id) {
+
+  const form = document.getElementById('updatePostForm');
+  const formData = new FormData(form);
+  const post = Object.formEntries(formData.entries())
+  const response = await fetch(API_SOCIAL_URL + "/posts/" + id, {
+    method: 'PUT',
+    cache: 'no-cache',
+    body: JSON.stringify(post)
+  });
+
+  return response.json();
+  
+}
+
+console.log(detailContainer);
 }
 getDetails();
 
@@ -48,6 +124,15 @@ function createHtml(details) {
           </div>
           <p class="mb-0 small">${details.title}</p>
         </div>
+        <div class="dropdown">
+        <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button> <i class="bi bi-chevron-down"></i>
+         <a href="#" class="text-dtext btn btn-secondary-soft-hover py-1 px-2"  data-bs-toggle="dropdown">
+         </a>
+         <ul class="dropdown-menu dropdown-menu-end">
+           <li><a class="dropdown-item text-dtext deleteBtn" href="#" data-id="${details.id}">Delete Post ${details.id}</a></li>
+           <li><a href="#"class="dropdown-item text-dtext btn editPostBtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasPost" aria-controls="offcanvas" data-id="${details.id}">Update Post </a></li>
+         </ul>
+       </div>
       </div>
     </div>
   </div>

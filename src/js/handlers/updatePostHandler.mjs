@@ -1,14 +1,13 @@
 import { getUsersPosts } from "../profile/userposts.mjs";
 import { updatePost } from "../profile/updateUsersPost.mjs";
-export async function setUpdatePostListener() {
-  const form = document.querySelector(".updatePostForm");
+export async function updatePostListener() {
+  const form = document.getElementsByClassName("updatePostForm");
 
   const url = new URL(location.href);
   const id = url.searchParams.get("id");
 
   if (form) {
-    const button = form.querySelector("button");
-    button.disabled = true;
+
 
     const post = await getUsersPosts(id);
 
@@ -17,7 +16,7 @@ export async function setUpdatePostListener() {
     form.tags.value = post.tags;
     form.media.value = post.media
 
-    button.disabled = false;
+    
 
     form.addEventListener("submit", (event) => {
       console.log("this was clicked")
@@ -31,6 +30,8 @@ export async function setUpdatePostListener() {
     });
 
   }
+
+  updatePostListener();
 }
   
 

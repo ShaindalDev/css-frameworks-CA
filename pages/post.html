@@ -80,6 +80,76 @@
         </ul>
       </div>
     </footer>
-
+ <!--Offcanvas stuff here-->
+      <!--Post edit starts here-->
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasPost" aria-labelledby="offcanvasPostLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasPostLabel">Updating your post</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div>
+            <h4></h4>
+    <form class="updatePostForm" id="updatePostForm">
+      <div class="form-group mb-3">
+        <label for="id" class="col-form-label">Post ID</label>
+        <input
+          type="number"
+          class="form-control bg-dim text-muted"
+          name="id"
+          id="id"
+          required
+          disabled
+          no-cursor
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="title" class="col-form-label">Title</label>
+        <input
+          type="text"
+          class="form-control bg-dim text-muted"
+          name="title"
+          id="title"
+          required
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="body" class="col-form-label">Body</label>
+        <textarea
+          type="text"
+          class="form-control bg-dim text-muted"
+          name="body"
+          id="body"
+          required></textarea>
+      </div>
+      <div class="form-group mb-3">
+        <label for="tags" class="col-form-label">Tags</label>
+        <input
+          type="text"
+          class="form-control bg-dim text-muted"
+          name="tags"
+          id="tags"
+        />
+        <div class="form-group mb-3">
+          <label for="media" class="col-form-label">Media</label>
+          <input
+            type="url"
+            class="form-control bg-dim text-muted"
+            name="media"
+            id="media"
+          />
+        </div>
+      </div>
+      <button
+        class="btn btn-primary mt-2 mb-3"
+        id="updatePostBtn"
+      >
+        Update Post
+      </button>
+    </form>
+          </div>
+          </div>
+        </div>
+        <!--Post edit END-->
   </body>
 </html>
