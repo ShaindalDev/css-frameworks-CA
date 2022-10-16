@@ -1,7 +1,6 @@
 //importing from other JS files
 import { authFetch } from "../api/authFetch.mjs";
 import { API_SOCIAL_URL } from "../api/constants.mjs";
-// import { setUpdatePostListener } from "../handlers/updatePostHandler.mjs";
 
 // global const used in the file
 
@@ -26,7 +25,7 @@ const authOptions = {
 export async function getUsersPosts() {
  
     const response = await fetch(
-      `${API_SOCIAL_URL}${postsURL}?sort=owner&_author=true&_reactions=true&_comments=true&limit=100&offset=200`,
+      `${API_SOCIAL_URL}${postsURL}?sort=owner&_author=true&_reactions=true&_comments=true&limit=400&offset=1`,
       {
         method: "get",
         headers: {
@@ -241,14 +240,15 @@ export async function getUsersPosts() {
     updatePost(postId);
   })
 
-  async function updatePost() {
+  async function updatePost(id) {
 
     const form = document.getElementById('updatePostForm');
     const formData = new FormData(form);
+    const post = Object.formEntries(formData.entries())
     const response = await fetch(API_SOCIAL_URL + "/posts/" + id, {
       method: 'PUT',
       cache: 'no-cache',
-      body: JSON.stringify(formData)
+      body: JSON.stringify(post)
     });
 
     return response.json();
@@ -261,11 +261,11 @@ export async function getUsersPosts() {
   
   console.log(usersPostContainer);
 
-  
+
 }
 
 getUsersPosts();
-// setUpdatePostListener()
+// updatePostListener()
 
 
 // ######## TESTING SECTION FOR THIS FILE ########

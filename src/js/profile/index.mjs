@@ -1,3 +1,3 @@
 export * from "./getProfile.mjs";
 export * from "./userposts.mjs";
-export * from "./updateUsersPost.mjs";
+// export * from "./updateUsersPost.mjs";
