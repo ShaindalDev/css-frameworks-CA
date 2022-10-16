@@ -1,12 +1,11 @@
 import { authFetch } from "../api/authFetch.mjs";
 import { API_SOCIAL_URL } from "../api/constants.mjs";
 import { renderPosts } from "../components/renderPost.mjs";
-console.log("filter was loaded");
 /**
  * Function with filter feed listener. Calling this one in index.mjs in the main JS folder
  */
 
-export async function filterFeedAscending() {
+export async function filterAscending() {
   const container = document.querySelector("#postContainer");
   const filterOldest = document.getElementById("newest");
 
@@ -15,7 +14,6 @@ export async function filterFeedAscending() {
   const post = await response.json();
 
   filterOldest.addEventListener("click", () => {
-    console.log("this was clicked");
     container.innerHTML = "";
     renderPosts(post, container);
   });
@@ -25,7 +23,7 @@ export async function filterFeedAscending() {
  * Function with filter feed listener. Calling this one in index.mjs in the main JS folder
  */
 
-export async function filterFeedDescending() {
+export async function filterDescending() {
   const container = document.querySelector("#postContainer");
   const filterOldest = document.querySelector("#oldest");
 
@@ -34,7 +32,6 @@ export async function filterFeedDescending() {
   const post = await response.json();
 
   filterOldest.addEventListener("click", () => {
-    console.log("this was clicked");
     container.innerHTML = "";
     renderPosts(post, container);
   });

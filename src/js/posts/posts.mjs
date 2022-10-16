@@ -2,7 +2,7 @@ import { API_SOCIAL_URL, token } from "../api/constants.mjs";
 import { renderPosts } from "../components/renderPost.mjs";
 import { searchPosts } from "../components/searchFunction.mjs";
 import { authFetch } from "../api/authFetch.mjs";
-import { filterFeedAscending, filterFeedDescending } from "../handlers/filter.mjs";
+import { filterAscending, filterDescending } from "../handlers/filter.mjs";
 
 //Get all posts on the API
 /**
@@ -20,8 +20,8 @@ export async function getAllPosts(getPostUrl) {
     console.log(posts);
     renderPosts(posts);
     searchPosts(posts);
-    filterFeedAscending(posts);
-    filterFeedDescending(posts);
+    filterAscending(posts);
+    filterDescending(posts);
   } catch(error) {
     console.log(error);
   }

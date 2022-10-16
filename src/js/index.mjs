@@ -2,20 +2,18 @@
 import * as posts from "./posts/index.mjs";
 import { renderPosts } from "./components/renderPost.mjs";
 import { searchPosts } from "./components/searchFunction.mjs";
-import { filterFeedAscending, filterFeedDescending } from "./handlers/filter.mjs";
+import { filterAscending, filterDescending } from "./handlers/filter.mjs";
 
 let searchedPostToRender = posts;
 let filteredPostsToRender = posts;
 
 renderPosts(searchedPostToRender);
 searchPosts(searchedPostToRender);
-
+filterAscending(filteredPostsToRender);
+filterDescending(filteredPostsToRender);
 posts.getAllPosts();
 
 
-
-filterFeedAscending(filteredPostsToRender);
-filterFeedDescending(filteredPostsToRender);
 
 // deletePost(4426)
 
