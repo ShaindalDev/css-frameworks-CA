@@ -8,6 +8,7 @@ import { API_SOCIAL_URL } from "../api/constants.mjs";
 const postsURL = "/posts";
 const token = localStorage.getItem("_token");
 const userName = localStorage.getItem("profile");
+const localEmail = localStorage.getItem("_email");
 const usersPostContainer = document.getElementById("usersPostWrapper");
 const authOptions = {
   headers: {
@@ -25,7 +26,7 @@ const authOptions = {
 export async function getUsersPosts() {
  
     const response = await fetch(
-      `${API_SOCIAL_URL}${postsURL}/?sort=owner&_author=true&_reactions=true&_comments=true&limit=100&offset=200`,
+      `${API_SOCIAL_URL}${postsURL}?sort=owner&_author=true&_reactions=true&_comments=true&limit=100&offset=200`,
       {
         method: "get",
         headers: {

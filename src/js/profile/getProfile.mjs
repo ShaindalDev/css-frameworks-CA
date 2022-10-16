@@ -6,8 +6,6 @@ const profilename = document.getElementById("profileName");
 const profileInfo = document.getElementById("profileInfo");
 const profileCount = document.getElementById("profileCount");
 const profileFriends = document.getElementById("offcanvasRight");
-// const token = localStorage.getItem("_token");
-// const profile = localStorage.getItem("profile");
 
 const action = "/profiles";
 
@@ -17,12 +15,6 @@ const profileWrapper = document.getElementById("profileWrapper");
  * it displays all the info of the user that is put in during registration process. 
  */
 async function getProfile() {
-  // const authOptions = {
-  //   headers: {
-  //     "Content-type": "application/json",
-  //     Authorization: `Bearer ${token}`,
-  //   },
-  // };
   const getProfileURL = `${API_SOCIAL_URL}${action}/${profile}`;
   const response = await authFetch(getProfileURL);
   const data = await response.json();
