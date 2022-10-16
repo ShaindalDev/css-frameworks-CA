@@ -3,10 +3,7 @@ import { API_SOCIAL_URL } from "../api/constants.mjs";
 import { renderPosts } from "../components/renderPost.mjs";
 console.log("filter was loaded");
 /**
- * Function with filter feed listener.
- *
- * @returns Listens for a button and display result in ascending order.
- *
+ * Function with filter feed listener. Calling this one in index.mjs in the main JS folder
  */
 
 export async function filterFeedAscending() {
@@ -20,15 +17,12 @@ export async function filterFeedAscending() {
   filterOldest.addEventListener("click", () => {
     console.log("this was clicked");
     container.innerHTML = "";
-    renderPostTemplate(post, container);
+    renderPosts(post, container);
   });
 }
 
 /**
- * Function with filter feed listener.
- *
- * @returns Listens for a button and display result in descending order.
- *
+ * Function with filter feed listener. Calling this one in index.mjs in the main JS folder
  */
 
 export async function filterFeedDescending() {
