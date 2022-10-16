@@ -9,7 +9,7 @@ const url = "https://nf-api.onrender.com/api/v1/social/posts/" + id;
 
 
 /**
- * This shows a singel post through using fetch with an PostID from the API When button View Post is clicked 
+ * This shows a single post through using fetch with an PostID from the API When button View Post is clicked 
  */
 export async function getDetails() {
   if (!id) {
@@ -160,5 +160,4 @@ function createHtml(details) {
   </div>
 </div>`;
 
-  // content.innerHTML += `${details.content}`;
 }

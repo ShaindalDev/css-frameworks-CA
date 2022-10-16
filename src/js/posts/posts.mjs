@@ -2,9 +2,13 @@ import { API_SOCIAL_URL, token } from "../api/constants.mjs";
 import { renderPosts } from "../components/renderPost.mjs";
 import { searchPosts } from "../components/searchFunction.mjs";
 import { authFetch } from "../api/authFetch.mjs";
-
+import { filterFeedAscending, filterFeedDescending } from "../handlers/filter.mjs";
 
 //Get all posts on the API
+/**
+ * This gets all post from the API trough a fetch request. 
+ * @param {*} getPostUrl 
+ */
 export async function getAllPosts(getPostUrl) {
 
   const url = `${API_SOCIAL_URL}/posts/?sort=created&sortOrder=desc&_author=true&_reactions=true&_comments=true`;
@@ -16,6 +20,8 @@ export async function getAllPosts(getPostUrl) {
     console.log(posts);
     renderPosts(posts);
     searchPosts(posts);
+    filterFeedAscending(posts);
+    filterFeedDescending(posts);
   } catch(error) {
     console.log(error);
   }
@@ -24,12 +30,6 @@ export async function getAllPosts(getPostUrl) {
 
 getAllPosts();
 
-// Filtering posts here 
-export async function getFilteredPosts() {
-  const posts = await morePosts();
-  const container = document.querySelector("#postContainer");
-  renderPosts.renderFilteredPost(posts, container)
-}
 
 // #####TESTING SECTION nothing here is important so it will be commented out when not in use######
 

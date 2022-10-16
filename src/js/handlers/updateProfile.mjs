@@ -1,3 +1,4 @@
+//THIS IS NOT IN USE YET, it's under construction
 import { getProfile, updateProfile } from "../api/profile/index.mjs";
 import { profile } from "../storage/storage.mjs";
 /**
