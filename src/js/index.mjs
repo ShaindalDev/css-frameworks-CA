@@ -3,6 +3,7 @@ import * as posts from "./posts/index.mjs";
 import { renderPosts } from "./components/renderPost.mjs";
 import { searchPosts } from "./components/searchFunction.mjs";
 import { getFilteredPosts } from "./posts/posts.mjs";
+import { filterFeedAscending, filterFeedDescending } from "./handlers/filter.mjs";
 
 let searchedPostToRender = posts;
 
@@ -12,6 +13,9 @@ searchPosts(searchedPostToRender);
 posts.getAllPosts();
 
 getFilteredPosts();
+
+filterFeedAscending();
+filterFeedDescending();
 
 // deletePost(4426)
 
