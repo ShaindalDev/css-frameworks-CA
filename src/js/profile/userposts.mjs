@@ -24,7 +24,7 @@ const authOptions = {
 export async function getUsersPosts() {
  
     const response = await fetch(
-      `${API_SOCIAL_URL}${postsURL}/?sort=owner&sortOrder=desc&_author=true&_comments=true&_reactions=true&limit=100&offset=200`,
+      `${API_SOCIAL_URL}${postsURL}/?sort=owner&_author=true&_reactions=true&_comments=true&limit=100&offset=200`,
       {
         method: "get",
         headers: {
