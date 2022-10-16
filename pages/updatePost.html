@@ -11,7 +11,7 @@
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="../src/js/auth/check.js" defer></script>
     <script src="../src/js/auth/logout.js" defer></script>
-    <script src="../src/js/profile/updateUsersPost.mjs" type="module" defer></script>
+    <script src="../src/js/handlers/updatepost.mjs" type="module" defer></script>
     <link rel="stylesheet" href="/dist/css/styles.css" />
     <title>Social Verse | Update Profile</title>
   </head>
@@ -54,33 +54,82 @@
       </div>
     </nav>
     <main class="container mt-4 shadow-sm p-3 mb-5 bg-body border border-1 rounded">
+      <!--profile nav with profile picture-->
+      <div id="profileWrapper">
+        <div class="profile-heading mt-4 mb-4 p-2 bg-lighter rounded border border-light">
+                <div class="h-50px" style="background-image:url(#); background-position: center; background-size: cover; background-repeat: no-repeat"></div>
+                <div class="card-body pt-0 border-0">
+                  <div class="text-center">
+                    <div class="text-center">
+                      <!-- profile image -->
+                      <a href="updateProfile.html"><button class="btn btn-primary" type="button">Edit Profile</button></a>
+                    </div>
+                    <hr>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Friends</button>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                      <div class="offcanvas-header">
+                        <h5 id="offcanvasRightLabel">Friends List</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                      </div>
+                      <div class="offcanvas-body">
+                        <div class="post post-story ">
+                          <a href="#"> <img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=male" alt=""> </a>
+                        </div>
+                        <div class="nav justify-content-center align-items-center">
+                          <h6 class="nav-item card-title mb-3"> <a href="#"> Albus Doredumble</a></h6>
+                        </div>
+                        <div class="post post-story ">
+                          <a href="#"> <img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=male" alt=""> </a>
+                        </div>
+                        <div class="nav justify-content-center align-items-center">
+                          <h6 class="nav-item card-title mb-3"> <a href="#"> The mighty Thor</a></h6>
+                        </div>
+                        <div class="post post-story ">
+                          <a href="#"> <img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=male" alt=""> </a>
+                        </div>
+                        <div class="nav justify-content-center align-items-center">
+                          <h6 class="nav-item card-title mb-3"> <a href="#"> Loki Odinsson</a></h6>
+                        </div>
+                        <div class="post post-story ">
+                          <a href="#"> <img class="post-img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=female" alt=""> </a>
+                        </div>
+                        <div class="nav justify-content-center align-items-center">
+                          <h6 class="nav-item card-title mb-3"> <a href="#"> Wanda Sakarov</a></h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        </div>
+      </div>
+    <!--End of profile nav-->
       <!--Start of post editing-->
-          <div>
+          <div class="row g-4">
             <h4>Update your Post</h4>
             <form id="updatePostForm">
                 <div class="row row-cols-1">
                   <div class="col">
                     <div class="mb-3">
                       <label for="postTitle" class="col-form-label">Title:</label>
-                      <input type="text" class="form-control" id="postTitle" name="postTitle" required/>
+                      <input type="text" class="form-control" id="postTitle" name="title" required/>
                     </div>
                   </div>
                   <div class="col">
                     <div class="mb-3">
                       <label for="postContent" class="col-form-label">Content:</label>
-                      <textarea type="text" class="form-control" id="postContent" name="postContent" required></textarea>
+                      <textarea type="text" class="form-control" id="postContent" name="body" required></textarea>
                     </div>
                   </div>
                   <div class="col">
                     <div class="mb-3">
                       <label for="postTags" class="col-form-label">Tags:</label>
-                      <input type="text" class="form-control" id="postTags" name="postTags" />
+                      <input type="text" class="form-control" id="postTags" name="tags" />
                     </div>
                   </div>
                   <div class="col">
                     <div class="mb-3">
                       <label for="postMedia" class="col-form-label">Media URL:</label>
-                      <input type="url" class="form-control" id="postMedia" name="postMedia" />
+                      <input type="url" class="form-control" id="postMedia" name="media" />
                     </div>
                   </div>
                 </div>

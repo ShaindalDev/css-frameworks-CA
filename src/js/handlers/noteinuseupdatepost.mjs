@@ -3,18 +3,19 @@ import { getUsersPosts, updateUsersPost } from "../profile/index.mjs";
  * This is an update post even handler for the update post form and button. 
  * This is where everything is controlled when it comes to updating a user's post
  */
+ export async function setUpdatePostListener(){
   const form = document.querySelector("#updatePostForm");
 
   const url = new URL(location.href);
   const id = url.searchParams.get("id");
 
   if (form) {
-    const button = form.querySelector("#postButton-submit");
+    const button = form.querySelector("#updatePostBtn");
     button.disabled = true;
 
     const post = await getUsersPosts(id);
 
-    form.title.value = post.title;
+    form.title.value = filteredData.title;
     form.body.value = post.body;
     form.tags.value = post.tags;
     form.media.value = post.media;
@@ -34,4 +35,6 @@ import { getUsersPosts, updateUsersPost } from "../profile/index.mjs";
       updateUsersPost(post)
     });
   }
+ }
+  
 

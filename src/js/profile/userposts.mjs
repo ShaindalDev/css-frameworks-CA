@@ -2,18 +2,18 @@
 import { authFetch } from "../api/authFetch.mjs";
 import { API_SOCIAL_URL } from "../api/constants.mjs";
 
-// import { setUpdatePostListener } from "../handlers/updatepost.mjs";
-import { deletePost } from "../posts/deletePost.mjs";
-// import { formatTimeChange } from "../components/formatTime.mjs";
-
 // global const used in the file
 
 const postsURL = "/posts";
 const token = localStorage.getItem("_token");
-const localEmail = localStorage.getItem("_email");
 const userName = localStorage.getItem("profile");
 const usersPostContainer = document.getElementById("usersPostWrapper");
-
+const authOptions = {
+  headers: {
+    "Content-type": `application/json; charset=UTF-8`,
+    Authorization: `Bearer ${token}`,
+  },
+};
 
 /**
  * This will get all the user's post that has been created. 
@@ -45,11 +45,6 @@ export async function getUsersPosts() {
       
       usersPostContainer.innerHTML = "";
       filteredData.forEach((filteredData) => {
-        
-
-        // setting date and time constant for change info from API
-        // const timeCreated = formatTimeChange(el.created);
-        // const timeUpdated = formatTimeChange(el.updated);
         usersPostContainer.innerHTML += `<div class="card border-0 userPostCard">
         <div class="card-header border-0 pb-0 bg-lighter">
           <div class="d-flex align-items-center justify-content-between">
@@ -71,7 +66,7 @@ export async function getUsersPosts() {
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item text-dtext deleteBtn" href="#" data-id="${filteredData.id}">Delete Post ${filteredData.id}</a></li>
-                <li><a href="#"class="dropdown-item text-dtext btn updatePostBtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasPost" aria-controls="offcanvas">Update Post </a></li>
+                <li><a href="#"class="dropdown-item text-dtext btn editPostBtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasPost" aria-controls="offcanvas" data-id="${filteredData.id}">Update Post </a></li>
               </ul>
             </div>
           </div>
@@ -219,24 +214,26 @@ export async function getUsersPosts() {
    */
 
   async function editPost(id) {
-
     const response = await fetch(`${API_SOCIAL_URL}/posts/` + id,
       authOptions
     );
 
     const post = await response.json();
-
     document.getElementById("id").value = post.id;
     document.getElementById("title").value = post.title;
     document.getElementById("body").value = post.body;
     document.getElementById("tags").value = post.tags;
     document.getElementById("media").value = post.media;
 
-  }
+    }
+    
 
-  const updatePostBtn = document.getElementById("updatePostBtn");
+  
+
+    const updatePostBtn = document.getElementById("updatePostBtn");
 
   updatePostBtn.addEventListener('click', event => {
+    event.preventDefault();
     console.log("this was clicked");
     const postId = document.getElementById("id").value;
     updatePost(postId);
@@ -246,7 +243,6 @@ export async function getUsersPosts() {
 
     const form = document.getElementById('updatePostForm');
     const formData = new FormData(form);
-
     const response = await fetch(API_SOCIAL_URL + "/posts/" + id, {
       method: 'PUT',
       cache: 'no-cache',

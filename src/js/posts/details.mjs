@@ -11,7 +11,7 @@ const url = "https://nf-api.onrender.com/api/v1/social/posts/" + id;
 /**
  * This shows a singel post through using fetch with an PostID from the API When button View Post is clicked 
  */
-async function getDetails() {
+export async function getDetails() {
   if (!id) {
     throw new Error("Failed to fetch the post due to missing PostID");
   }

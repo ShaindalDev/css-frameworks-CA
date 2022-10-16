@@ -2,15 +2,7 @@
 import * as posts from "./posts/index.mjs";
 import { renderPosts } from "./components/renderPost.mjs";
 import { searchPosts } from "./components/searchFunction.mjs";
-
-import * as search from "./components/searchFunction.mjs";
-
-import { createPost }  from "./posts/createPost2.mjs";
-
-// import { updateUsersPost } from "./profile/updateUsersPost.mjs";
-
-
-
+import { getFilteredPosts } from "./posts/posts.mjs";
 
 let searchedPostToRender = posts;
 
@@ -18,6 +10,8 @@ renderPosts(searchedPostToRender);
 searchPosts(searchedPostToRender);
 
 posts.getAllPosts();
+
+getFilteredPosts();
 
 // deletePost(4426)
 

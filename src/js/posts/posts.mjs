@@ -2,40 +2,34 @@ import { API_SOCIAL_URL, token } from "../api/constants.mjs";
 import { renderPosts } from "../components/renderPost.mjs";
 import { searchPosts } from "../components/searchFunction.mjs";
 import { authFetch } from "../api/authFetch.mjs";
-// import { filterPosts } from "../components/filterFunction.mjs";
 
-const fBtn = document.querySelectorAll('.fBtn');
-// const filteredPostContainer = document.querySelector('#filteredPostContainer');
-
-/**
- * This is the event listener for the search bar, this will is what registers the keypress and filters trough posts to find the match characters used in the searchbar
- */
-
-// const authOptions = {
-//   headers: {
-//     "Content-type": `application/json; charset=UTF-8`,
-//     Authorization: `Bearer ${token}`,
-//   },
-// };
 
 //Get all posts on the API
-export async function getAllPosts() {
+export async function getAllPosts(getPostUrl) {
 
   const url = `${API_SOCIAL_URL}/posts/?sort=created&sortOrder=desc&_author=true&_reactions=true&_comments=true`;
   const method = "GET";
 
   try {
     const response = await authFetch(url, method);
-    const posts = await response.json();
-
+    const posts = await response.json(getPostUrl);
+    console.log(posts);
     renderPosts(posts);
     searchPosts(posts);
   } catch(error) {
     console.log(error);
   }
+  
 };
 
 getAllPosts();
+
+// Filtering posts here 
+export async function getFilteredPosts() {
+  const posts = await morePosts();
+  const container = document.querySelector("#postContainer");
+  renderPosts.renderFilteredPost(posts, container)
+}
 
 // #####TESTING SECTION nothing here is important so it will be commented out when not in use######
 

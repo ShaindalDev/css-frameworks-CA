@@ -13,6 +13,7 @@
     <script src="./src/js/auth/logout.js" defer></script>
     <script src="./src/js/index.mjs" type="module" defer></script>
     <script src="./src/js/handlers/createPost.mjs" type="module"></script>
+    
 
     <link rel="stylesheet" href="/dist/css/styles.css" />
     <title>Social Verse | Home</title>
@@ -116,19 +117,14 @@
       </div>
       <hr>
       <!--Filtering posts Start-->
-      <div class=" p-3 rounded col-lg-8 text-dtext bg-dim w-100">
-                    <select class="form-select text-dtext" name="postSorting" id="postSorting">
-                      <option selected>Filter Posts here</option>
-                      <option id="clear" value="All">All posts</option>
-                      <option id="today" value="Today">Today</option>
-                      <option id="oldest" value="Oldest">Oldest</option>
-                      <option id="lastWeek" value="LastWeek">Last Week</option>
-                    </select>
-      <div class="col" id="filteredPostContainer"></div>
-    </div>
+      <div class="d-flex justify-content-between m-auto">
+        <button class="btn btn-primary" id="yesterdayPost">From yesterday</button>
+        <button class="btn btn-primary" id="twoDaysAgo">Two days ago</button>
+      
+      </div>
     <div>
       <div id="postContainer" class="row mb-2 mt-4 pt-4">
-        <!-- <div class="postContainer col-md-6"></div> -->
+    
       </div>
     </main>
     <footer class="footer mt-auto py-3 bg-light">
