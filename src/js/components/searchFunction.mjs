@@ -1,5 +1,8 @@
 import { renderPosts } from "./renderPost.mjs";
-
+/**
+ * This is the search bar function, it will give the result typed in search bar and replace posts with matching result.
+ * @param {*} post 
+ */
 export function searchPosts(post) {
     const searchBar = document.querySelector('#searchBar');
     searchBar.onkeyup = function (event) {
